@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Shaxsiy Kabinet</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="dashboard-main">
+        <div class="profile-card">
+            <h2>Shaxsiy Kabinet</h2>
+            
+            <div id="loading-message">Ma'lumotlar yuklanmoqda...</div>
+            <div id="profile-info" style="display: none;">
+                
+                <div class="info-group">
+                    <label>Ism:</label>
+                    <span id="user-name"></span>
+                </div>
+                
+                <div class="info-group">
+                    <label>Email:</label>
+                    <span id="user-email"></span>
+                </div>
+                
+                <div class="info-group">
+                    <label>Rol (Lavozim):</label>
+                    <span id="user-role"></span>
+                </div>
+
+                <div class="info-group">
+                    <label>ID:</label>
+                    <span id="user-id"></span>
+                </div>
+
+                </div>
+            
+            <button id="logout-btn">Chiqish (Logout)</button>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>
