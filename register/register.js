@@ -29,6 +29,9 @@ registerForm.addEventListener('submit', async (e) => {
             body: JSON.stringify({ name, email, password, phone, age }), // YENGI MAYDONLAR QO'SHILDI
         });
 
+        // YENGI QADAM: Tokenni Local Storage'ga saqlash
+        localStorage.setItem('userToken', data.token);
+
         // Muvaffaqiyatli javob
         console.log('Ro\'yxatdan o\'tish muvaffaqiyatli:', data);
         alert(`Muvaffaqiyatli! Foydalanuvchi: ${data.name}. Endi tizimga kirishingiz mumkin.`);

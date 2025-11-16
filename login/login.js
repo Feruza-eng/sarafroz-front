@@ -23,6 +23,9 @@ loginForm.addEventListener('submit', async (e) => {
             body: JSON.stringify({ email, password }),
         });
 
+        // YENGI QADAM: Tokenni Local Storage'ga saqlash
+        localStorage.setItem('userToken', data.token);
+
         // Muvaffaqiyatli javob
         console.log('Kirish muvaffaqiyatli:', data);
         alert(`Xush kelibsiz, ${data.name}!`);
