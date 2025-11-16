@@ -1,0 +1,73 @@
+/* Asosiy uslublar, masalan, body va font-family'lar global style.css da bo'lishi kerak. */
+
+/* Faqat login sahifasi uchun tartiblash */
+.login-main {
+    flex-grow: 1; /* Sahifaning qolgan qismini egallash */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Login formasi kichikroq */
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #007bff;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Button uslubi */
+#login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Kirish uchun ko'k rang */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#login-btn:hover {
+    background-color: #0056b3;
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #28a745; /* Ro'yxatdan o'tish uchun yashil rang */
+    text-decoration: none;
+}

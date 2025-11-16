@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tizimga Kirish - EduWeb</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="login-main">
+        <div class="login-card">
+            <h2>Tizimga Kirish</h2>
+            <form id="login-form">
+                
+                <div class="form-group">
+                    <label for="email">Email Manzili:</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Parol:</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <button type="submit" id="login-btn">Kirish</button>
+            </form>
+
+            <p class="register-link">
+                Hisobingiz yo'qmi? <a href="../register/register.html">Ro'yxatdan o'tish</a>
+            </p>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>
