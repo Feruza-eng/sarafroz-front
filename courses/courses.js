@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', fetchCoursesAndCheckRole);
 // Global o'zgaruvchilar
 let currentUserRole = 'student'; 
 let currentUserId = null; // YANGI: Tizimga kirgan foydalanuvchining ID'si
+let enrolledCourseIds = []; // <<<<<< MUHIM QO'SHIMCHA: Bo'sh massiv sifatida e'lon qiling
 
 // Boshlanish funksiyasi (Loyihaning asosiy kirish nuqtasi)
 async function fetchCoursesAndCheckRole() {
@@ -31,8 +32,13 @@ async function fetchCoursesAndCheckRole() {
     // Foydalanuvchi rolini olish va kurslarni yuklash
     try {
         await checkUserRole(token);
+        
+        // FQ'AT TALABALAR UCHUN: Ro'yxatdan o'tilgan kurslar IDlarini olish
+        if (currentUserRole === 'student') {
+            await fetchEnrolledCourseIds(token); // YANGI FUNKSIYANI CHAQRIRAMIZ
+        }
+
         await fetchAllCourses(token);
-        // Kurslar yuklangandan keyin o'chirish/tahrirlash uchun tinglovchilarni qo'shamiz
         addActionListeners(); 
     } catch (error) {
         // Agar token yaroqsiz bo'lsa, login sahifasiga o'tkazish
@@ -57,6 +63,40 @@ async function checkUserRole(token) {
     
     if (currentUserRole === 'admin' || currentUserRole === 'teacher') {
         addCourseBtn.style.display = 'block';
+    }
+}
+
+// Ro'yxatdan o'tilgan kurslarning ID larini Backenddan yuklash
+async function fetchEnrolledCourseIds(token) {
+    try {
+        const response = await apiRequest('/enroll/my-courses', {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        // FQ'AT KURS ID'LARINI SAQLAYMIZ
+        // MUHIM TEKSHIRUV: Agar 304 kelib bo'sh obyekt qaytgan bo'lsa yoki 'courses' topilmasa
+        if (response && response.courses && Array.isArray(response.courses)) {
+            enrolledCourseIds = response.courses.map(course => course._id);
+        } else {
+            // Agar javobda kurslar ro'yxati bo'lmasa yoki 304 bo'lsa, ro'yxatni bo'sh qoldiramiz
+            enrolledCourseIds = [];
+        }
+        
+        // Faqat kurs ID'larini saqlaymiz
+        enrolledCourseIds = response.courses.map(course => course._id);
+        
+    } catch (error) {
+        console.error("Ro'yxatdan o'tilgan kurslarni yuklashda xato:", error);
+        // MUHIM: Xatoning nomi va xabari
+        console.error("Xato tafsiloti:", error.name, error.message); 
+        enrolledCourseIds = [];
+        
+        // Xatoni yuqoriga qayta tashlaymiz. 
+                // Sababi: Agar bu API chaqirig'ida Avtorizatsiya xatosi bo'lsa, 
+                // butun sahifa to'xtashi va login sahifasiga o'tkazilishi to'g'ri.
+                // Hozirgi holatda bu yordamchi funksiya bo'lgani uchun, xatoni tashlab yuboramiz.
+                throw error; // <<<< BU QATORNI QO'SHI 
     }
 }
 
@@ -93,21 +133,51 @@ function displayCourses(courses) {
         const card = document.createElement('div');
         card.className = 'course-card';
         
-        // EGALIKNI TEKSHIRISHNI TUZATISH: Endi currentUserId dan foydalanamiz
+        // EGALIKNI TEKSHIRISH
         const isOwner = course.teacher._id === currentUserId; 
+        
+        // Tugmalar uchun HTML
+        let actionButtons = '';
+
+        // const isOwner = course.teacher._id === currentUserId; 
+        // let actionButtons = '';
+        
+        if (currentUserRole === 'admin' || isOwner) {
+            // ADMIN yoki TEACHER uchun Tahrirlash/O'chirish
+            actionButtons = `
+                <div class="course-actions">
+                    <button class="edit-btn" data-id="${course._id}">Tahrirlash</button>
+                    <button class="delete-btn" data-id="${course._id}">O'chirish</button>
+                </div>
+            `;
+        } else if (currentUserRole === 'student') {
+            
+            // YANGI: Talaba ro'yxatdan o'tganligini tekshirish
+            const isEnrolled = enrolledCourseIds.includes(course._id);
+
+            if (isEnrolled) {
+                // ALLAQACHON RO'YXATDAN O'TILGAN
+                actionButtons = `
+                    <div class="course-actions">
+                        <button class="enrolled-btn" disabled>✅ Ro'yxatdan O'tilgan</button>
+                    </div>
+                `;
+            } else {
+                // Yana ro'yxatdan o'tish mumkin
+                 actionButtons = `
+                    <div class="course-actions">
+                        <button class="enroll-btn" data-id="${course._id}">Kursga Yozilish</button>
+                    </div>
+                `;
+            }
+        }
         
         card.innerHTML = `
             <h4>${course.title}</h4>
             <p>${course.description}</p>
             <div class="teacher">O'qituvchi: ${course.teacher.name} (${course.teacher.role})</div>
             <div class="price">$${course.price.toFixed(2)}</div>
-            ${currentUserRole === 'admin' || isOwner ? 
-                `<div class="course-actions">
-                    <button class="edit-btn" data-id="${course._id}">Tahrirlash</button>
-                    <button class="delete-btn" data-id="${course._id}">O'chirish</button>
-                </div>` 
-                : ''}
-        `;
+            ${actionButtons} `;
         coursesList.appendChild(card);
     });
 }
@@ -201,6 +271,36 @@ async function handleDelete(courseId, token) {
     }
 }
 
+// Kursga ro'yxatdan o'tish (Enroll) funksiyasi
+async function handleEnroll(courseId, token) {
+    // Qo'shimcha tekshiruv: Talaba kursga yozilishni tasdiqlasin
+    if (!confirm("Siz ro'yxatdan o'tishni tasdiqlaysizmi?")) {
+        return;
+    }
+
+    try {
+        const response = await apiRequest(`/enroll`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ courseId }) // Backendga faqat kurs ID'sini yuboramiz
+        });
+
+        alert(response.message || "Kursga muvaffaqiyatli ro'yxatdan o'tildi!");
+        
+        // Ro'yxatdan o'tgandan so'ng, kurslar ro'yxatini yangilash zarur bo'lmasa-da, 
+        // keyinchalik "Ro'yxatdan o'tish" tugmasini "Ro'yxatdan o'tilgan" qilish uchun foydali
+        await fetchAllCourses(token);
+        addActionListeners();
+
+    } catch (error) {
+        console.error('Kursga yozilishda xato:', error);
+        alert(error.message || 'Kursga yozilishda xato yuz berdi. Balki siz allaqachon ro\'yxatdan o\'tgandirsiz.');
+    }
+}
+
 // Tahrirlash modalini ochish, ma'lumotlarni yuklash va formani to'ldirish
 async function handleEdit(courseId, token) {
     try {
@@ -242,6 +342,12 @@ async function handleCourseActions(e) {
         const courseId = e.target.dataset.id;
         // ALERt o'rniga haqiqiy tahrirlash funksiyasini chaqiramiz
         handleEdit(courseId, token); 
+    }
+
+    // YANGI: Enroll tugmasini tinglash
+    if (e.target.classList.contains('enroll-btn')) {
+        const courseId = e.target.dataset.id;
+        handleEnroll(courseId, token); 
     }
 }
 
