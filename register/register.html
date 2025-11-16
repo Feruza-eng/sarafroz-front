@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro'yxatdan O'tish - EduWeb</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="register-main">
+        <div class="register-card">
+            <h2>Yangi Hisob Yaratish</h2>
+            <form id="register-form">
+                
+                <div class="form-group">
+                    <label for="name">To'liq Ism:</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Manzili:</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Parol:</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <button type="submit" id="register-btn">Ro'yxatdan O'tish</button>
+            </form>
+
+            <p class="login-link">
+                Allaqaon hisobingiz bormi? <a href="../login/login.html">Kirish</a>
+            </p>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="register.js"></script>
+</body>
+</html>
