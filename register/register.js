@@ -4,7 +4,7 @@ const registerForm = document.getElementById('register-form');
 const registerButton = document.getElementById('register-btn');
 
 registerForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Formaning standart yuborilishini to'xtatish
+    e.preventDefault();
 
     // Tugmani bloklash va matnni o'zgartirish
     registerButton.disabled = true;
@@ -14,15 +14,19 @@ registerForm.addEventListener('submit', async (e) => {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    
+    // YENGI MA'LUMOTLARNI OLISH
+    const phone = document.getElementById('phone').value;
+    const age = parseInt(document.getElementById('age').value); // Yosh raqam (Number) bo'lishi kerak
 
     try {
-        // Backend'dagi /api/auth/register endpointiga so'rov yuborish
+        // Ma'lumotlarni backendga POST so'rovi bilan yuborish
         const data = await apiRequest('/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, email, password }),
+            body: JSON.stringify({ name, email, password, phone, age }), // YENGI MAYDONLAR QO'SHILDI
         });
 
         // Muvaffaqiyatli javob
