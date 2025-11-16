@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Kurslarim</title>
+    <link rel="stylesheet" href="./my-courses.css">
+    <style>
+        /* Faqat bu sahifa uchun qo'shimcha CSS (ixtiyoriy) */
+        .my-courses-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mening Kurslarim</h1>
+        <nav>
+            <a href="../courses/courses.html">Barcha Kurslar</a>
+            <a href="#" id="logout-btn">Chiqish</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 id="page-title">Ro'yxatdan O'tilgan Kurslarim</h2>
+        <div id="loading-message">Kurslar yuklanmoqda...</div>
+        <div id="my-courses-list" class="my-courses-list">
+            </div>
+    </main>
+
+    <script type="module" src="my-courses.js"></script>
+    <script src="../assets/js/logout.js"></script>
+</body>
+</html>

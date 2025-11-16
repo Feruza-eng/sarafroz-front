@@ -1,0 +1,80 @@
+/* edu-web-frontend/assets/css/style.css fayliga qo'shiladi */
+
+/* Kurslar ro'yxati konteyneri */
+.my-courses-list,
+.courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Kurs kartochkasi */
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card h4 {
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.course-card p {
+    color: #555;
+    margin: 10px 0;
+}
+
+.course-card .teacher {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* Tugmalar konteyneri */
+.course-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Umumiy tugmalar uslubi */
+.course-actions button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.enroll-btn,
+.view-content-btn { /* 'Ro'yxatdan O'tish' va 'Materiallarga O'tish' tugmalari */
+    background-color: #28a745;
+    color: white;
+}
+
+.enrolled-btn { /* Ro'yxatdan O'tilgan (disabled) tugma */
+    background-color: #6c757d;
+    color: white;
+    cursor: default;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
