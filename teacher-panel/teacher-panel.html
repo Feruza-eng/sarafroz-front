@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>O'qituvchi Paneli - Vazifalar</title>
+    <!-- <link rel="stylesheet" href="style.css">  -->
+</head>
+<body>
+    <header>
+        <h2>O'qituvchi Paneli</h2>
+        <div id="teacher-info"></div>
+    </header>
+    
+    <main>
+        <h3>Tekshirilmagan Vazifalar (<span id="submission-count">0</span>)</h3>
+        
+        <div id="submissions-list-container">
+            </div>
+
+        <div id="feedback-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h4>Vazifani Baholash</h4>
+                <p>Dars: <span id="modal-lesson-title"></span></p>
+                <p>Talaba: <span id="modal-student-name"></span></p>
+                
+                <div id="modal-submission-text" class="submission-text-area"></div>
+                
+                <label for="grade-input">Baho (0-100):</label>
+                <input type="number" id="grade-input" min="0" max="100" value="100">
+                
+                <label for="feedback-input">Fikr (Feedback):</label>
+                <textarea id="feedback-input"></textarea>
+                
+                <button id="approve-btn">✅ Tasdiqlash va Baholash</button>
+                <button id="reject-btn">❌ Rad Etish</button>
+                <button id="close-modal-btn">Yopish</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- <script src="../assets/js/api.js"></script>
+    <script src="teacher-panel.js"></script> -->
+    <script type="module" src="../assets/js/api.js"></script>
+    <script type="module" src="teacher-panel.js"></script>
+</body>
+</html>

@@ -341,7 +341,7 @@ async function handleSubmitTask() {
         const data = {
             lessonId: currentLessonId,
             submissionText: submissionText,
-            // courseId: currentCourseId, // Bu ham kerak bo'lishi mumkin
+            courseId: currentCourseId, // Bu ham kerak bo'lishi mumkin
         };
 
         // Backendda Submission yaratish uchun API so'rovi
@@ -358,7 +358,7 @@ async function handleSubmitTask() {
         submissionInputEl.value = ''; // Inputni tozalash
         
         // Dars ro'yxatini yangilash orqali statusni ko'rsatish
-        // await fetchCourseAndLessons(currentCourseId); 
+        await fetchCourseAndLessons(currentCourseId); 
 
     } catch (error) {
         console.error('Vazifani topshirishda xato:', error);
