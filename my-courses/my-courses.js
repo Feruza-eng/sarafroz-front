@@ -1,3 +1,5 @@
+// edu-web-frontend/my-courses/my-courses.js
+
 import { apiRequest } from '../assets/js/api.js';
 
 const myCoursesList = document.getElementById('my-courses-list');
@@ -55,8 +57,28 @@ function displayCourses(courses) {
             <p>${course.description}</p>
             <div class="teacher">O'qituvchi: ${course.teacher.name}</div>
             <div class="status">Ro'yxatdan o'tish sanasi: ${new Date(course.enrollmentDate).toLocaleDateString()}</div>
-            <button class="view-content-btn" disabled>Kurs Materiallariga O'tish (Keyingi bosqich)</button>
+            
+            <button class="view-content-btn" data-course-id="${course._id}">Kurs Materiallariga O'tish</button>
         `;
         myCoursesList.appendChild(card);
+    });
+    
+    // Tugmalar mantiqini qo'shamiz
+    addContentViewListeners();
+}
+
+// 3. Tugmalarni tinglovchi funksiya
+function addContentViewListeners() {
+    // myCoursesList konteyneriga klik hodisasi tinglovchisini qo'shamiz
+    myCoursesList.addEventListener('click', (e) => {
+        // Agar bosilgan element "view-content-btn" klassiga ega bo'lsa
+        if (e.target.classList.contains('view-content-btn')) {
+            const courseId = e.target.dataset.courseId; // Tugmadagi data-course-id atributini olamiz
+            
+            if (courseId) {
+                // Kurs materiallari sahifasiga yo'naltiramiz
+                window.location.href = `../lesson-view/lesson-view.html?courseId=${courseId}`;
+            }
+        }
     });
 }

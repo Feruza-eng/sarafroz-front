@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dars Qo'shish - EduWeb</title>
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+    <link rel="stylesheet" href="lesson-management.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="lesson-management-main">
+        <h2 id="page-title">➕ Dars Qo'shish: <span id="current-course-title">Yuklanmoqda...</span></h2>
+        
+        <div class="add-lesson-form-container">
+            <h3>Yangi Dars Qo'shish</h3>
+            <form id="lesson-form">
+                
+                <input type="hidden" id="course-id-input">
+                
+                <label for="lesson-title-input">1. Dars nomi:</label>
+                <input type="text" id="lesson-title-input" required>
+
+                <label for="video-url-input">2. Video qo'llanma Linki:</label>
+                <input type="url" id="video-url-input" placeholder="YouTube, Vimeo yoki boshqa video linki" required>
+                
+                <label for="documentation-url-input">3. Dokumentatsiya Linki:</label>
+                <input type="url" id="documentation-url-input" placeholder="Google Drive, PDF yoki boshqa hujjat linki" required>
+                
+                <label for="task-file-url-input">4. Vazifa Fayli Linki:</label>
+                <input type="url" id="task-file-url-input" placeholder="Vazifa faylini yuklash joyi (masalan, Google Drive) linki" required>
+
+                <label for="task-description-input">5. Vazifa Tavsifi (Talabalar uchun qisqa ko'rsatma):</label>
+                <textarea id="task-description-input" rows="3" required></textarea>
+                
+                <button type="submit" id="submit-lesson-btn" class="btn btn-primary">Darsni Saqlash</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="view-lessons-container">
+            <button id="view-lessons-btn" class="btn btn-secondary">▶️ Kurs Materiallarini Ko'rish</button>
+        </div>
+        
+        <h3>Qo'shilgan Darslar Ro'yxati (<span id="lesson-count">0</span>)</h3>
+        <ul id="lessons-list-admin">
+            </ul>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="lesson-management.js"></script>
+</body>
+</html>

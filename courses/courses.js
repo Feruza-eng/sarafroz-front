@@ -121,8 +121,10 @@ async function fetchAllCourses(token) {
 }
 
 // 3. Kurslarni HTMLga joylash
+// edu-web-frontend/courses/courses.js (displayCourses funksiyasining ichida)
+
 function displayCourses(courses) {
-    coursesList.innerHTML = ''; // Eski ma'lumotlarni tozalash
+    coursesList.innerHTML = ''; 
 
     if (courses.length === 0) {
         coursesList.innerHTML = '<p>Hozircha kurslar mavjud emas.</p>';
@@ -133,52 +135,74 @@ function displayCourses(courses) {
         const card = document.createElement('div');
         card.className = 'course-card';
         
-        // EGALIKNI TEKSHIRISH
         const isOwner = course.teacher._id === currentUserId; 
         
-        // Tugmalar uchun HTML
-        let actionButtons = '';
-
-        // const isOwner = course.teacher._id === currentUserId; 
-        // let actionButtons = '';
-        
-        if (currentUserRole === 'admin' || isOwner) {
-            // ADMIN yoki TEACHER uchun Tahrirlash/O'chirish
-            actionButtons = `
-                <div class="course-actions">
-                    <button class="edit-btn" data-id="${course._id}">Tahrirlash</button>
-                    <button class="delete-btn" data-id="${course._id}">O'chirish</button>
-                </div>
-            `;
-        } else if (currentUserRole === 'student') {
-            
-            // YANGI: Talaba ro'yxatdan o'tganligini tekshirish
-            const isEnrolled = enrolledCourseIds.includes(course._id);
-
-            if (isEnrolled) {
-                // ALLAQACHON RO'YXATDAN O'TILGAN
-                actionButtons = `
-                    <div class="course-actions">
-                        <button class="enrolled-btn" disabled>✅ Ro'yxatdan O'tilgan</button>
-                    </div>
-                `;
-            } else {
-                // Yana ro'yxatdan o'tish mumkin
-                 actionButtons = `
-                    <div class="course-actions">
-                        <button class="enroll-btn" data-id="${course._id}">Kursga Yozilish</button>
-                    </div>
-                `;
-            }
-        }
-        
+        // 1. Asosiy HTMLni o'rnatamiz
         card.innerHTML = `
             <h4>${course.title}</h4>
             <p>${course.description}</p>
             <div class="teacher">O'qituvchi: ${course.teacher.name} (${course.teacher.role})</div>
             <div class="price">$${course.price.toFixed(2)}</div>
-            ${actionButtons} `;
-        coursesList.appendChild(card);
+        `;
+
+        // 2. ActionsDiv elementini yaratamiz
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'course-actions';
+
+        // 3. ActionsDiv ichiga tugmalarni qo'shamiz (bu qismi sizda to'g'ri yozilgan)
+        // ------------------------------------------
+        // TUGMALAR MANTIQI: Rolga Asoslangan Boshqaruv
+        // ------------------------------------------
+        
+        // A. Tahrirlash va Boshqaruv tugmalari (Faqat Admin yoki Kursning O'qituvchisi uchun)
+        if (currentUserRole === 'admin' || (currentUserRole === 'teacher' && isOwner)) {
+            
+            // --- Tahrirlash tugmasi ---
+            const editBtn = document.createElement('button');
+            editBtn.className = 'edit-btn';
+            editBtn.textContent = 'Kursni Tahrirlash';
+            editBtn.dataset.courseId = course._id;
+            editBtn.dataset.action = 'edit';
+            actionsDiv.appendChild(editBtn);
+
+            // --- Material Qo'shish/Darslarni Boshqarish tugmasi (YANGI) ---
+            const manageBtn = document.createElement('button');
+            manageBtn.className = 'manage-btn';
+            manageBtn.textContent = '📚 Darslarni Boshqarish'; 
+            manageBtn.dataset.courseId = course._id;
+            manageBtn.dataset.action = 'manage'; 
+            actionsDiv.appendChild(manageBtn);
+
+            // --- O'chirish tugmasi ---
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.textContent = 'O\'chirish';
+            deleteBtn.dataset.courseId = course._id;
+            deleteBtn.dataset.action = 'delete';
+            actionsDiv.appendChild(deleteBtn);
+            
+        } 
+        
+        // B. Kursga yozilish (Faqat Talabalar uchun / Yoki O'qituvchi boshqaning kursiga yozilsa)
+        if (currentUserRole === 'student' || (currentUserRole === 'teacher' && !isOwner)) {
+            const isEnrolled = enrolledCourseIds.includes(course._id);
+            const button = document.createElement('button');
+            button.className = isEnrolled ? 'enrolled-btn' : 'enroll-btn';
+            button.textContent = isEnrolled ? '✅ Ro\'yxatdan O\'tilgan' : 'Kursga Yozilish';
+            button.disabled = isEnrolled;
+            
+            if (!isEnrolled) {
+                button.dataset.courseId = course._id;
+                button.dataset.action = 'enroll';
+            }
+            actionsDiv.appendChild(button);
+        }
+
+        // 4. ActionsDiv'ni asosiy card'ga qo'shamiz!
+        card.appendChild(actionsDiv); 
+        
+        // 5. Card'ni ro'yxatga qo'shamiz
+        coursesList.appendChild(card); 
     });
 }
 
@@ -330,26 +354,44 @@ async function handleEdit(courseId, token) {
 
 
 // Edit tugmasini bosish handler'ini yangilash
-async function handleCourseActions(e) {
-    const token = localStorage.getItem('userToken');
-        
-    if (e.target.classList.contains('delete-btn')) {
-        const courseId = e.target.dataset.id;
-        handleDelete(courseId, token);
-    } 
-        
-    if (e.target.classList.contains('edit-btn')) {
-        const courseId = e.target.dataset.id;
-        // ALERt o'rniga haqiqiy tahrirlash funksiyasini chaqiramiz
-        handleEdit(courseId, token); 
-    }
+// courses/courses.js (handleCourseActions funksiyasi)
 
-    // YANGI: Enroll tugmasini tinglash
-    if (e.target.classList.contains('enroll-btn')) {
-        const courseId = e.target.dataset.id;
-        handleEnroll(courseId, token); 
+async function handleCourseActions(e) {
+    // 1. Agar bosilgan element tugma bo'lmasa, chiqib ketamiz
+    if (!e.target.tagName === 'BUTTON') return;
+    
+    // 2. Kerakli ma'lumotlarni yagona atributdan olamiz
+    const action = e.target.dataset.action;
+    const courseId = e.target.dataset.courseId; // Biz loyihada asosan shu atributni ishlatdik
+
+    if (!action || !courseId) {
+        console.error("Harakat turi yoki Kurs ID'si topilmadi.");
+        return;
+    }
+    
+    const token = localStorage.getItem('userToken');
+
+    // 3. Action turiga qarab mantiqni chaqiramiz
+    if (action === 'enroll') {
+        // Enroll mantiqi (avvalgi loyihangizdan)
+        handleEnroll(courseId, token);
+        
+    } else if (action === 'edit') {
+        // Kurs ma'lumotlarini tahrirlash mantiqi
+        handleEdit(courseId, token); 
+        
+    } else if (action === 'delete') {
+        // Kursni o'chirish mantiqi
+        handleDelete(courseId, token);
+        
+    } else if (action === 'manage') { 
+        // Dars materiallarini boshqarish sahifasiga o'tish
+        window.location.href = `../course-manager/course-manager.html`;
     }
 }
+
+// ESLATMA: Iltimos, barcha tugmalaringizda faqat bitta atributni ishlating: data-course-id="[ID]"
+// (e.target.dataset.id o'rniga faqat e.target.dataset.courseId ishlatilishi kerak)
 
 
 // Bekor qilish tugmasini bosish (Formani yashirish)

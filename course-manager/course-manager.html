@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurslarni Boshqarish - EduWeb</title>
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+    <link rel="stylesheet" href="course-manager.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="course-manager-main">
+        <h2>📝 Kurslar Ro'yxati va Boshqaruvi</h2>
+        
+        <div id="add-course-btn-container" class="add-btn-container">
+            </div>
+
+        <p id="loading-message">Kurslar yuklanmoqda...</p>
+        
+        <div id="course-list" class="courses-grid">
+            </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title">Yangi Kurs Qo'shish</h3>
+            <form id="course-form">
+                <input type="hidden" id="course-id">
+                
+                <label for="title">Kurs nomi:</label>
+                <input type="text" id="title" required>
+                
+                <label for="description">Tavsif:</label>
+                <textarea id="description" rows="4" required></textarea>
+                
+                <label for="price">Narxi (so'mda):</label>
+                <input type="number" id="price" required min="0" value="0">
+                
+                <button type="submit" id="submit-btn" class="btn btn-submit">Saqlash</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="course-manager.js"></script>
+</body>
+</html>
