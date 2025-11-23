@@ -13,8 +13,8 @@ const closeBtn = document.getElementById('close-modal-btn');
 let currentSubmissionId = null; 
 
 document.addEventListener('DOMContentLoaded', initializeTeacherPanel);
-approveBtn.addEventListener('click', () => handleApproval('approved'));
-rejectBtn.addEventListener('click', () => handleApproval('rejected'));
+approveBtn.addEventListener('click', () => handleSubmissionReview('approved')); // 🔥 Yangilandi
+rejectBtn.addEventListener('click', () => handleSubmissionReview('rejected')); // 🔥 Yangilandi
 closeBtn.addEventListener('click', () => modal.style.display = 'none');
 
 
@@ -109,37 +109,75 @@ function openReviewModal(e) {
 
 
 // 5. Vazifani tasdiqlash yoki rad etish
-async function handleApproval(action) {
+async function handleSubmissionReview(status) { // 🔥 Funksiya nomi va parametrni o'zgartirdik
     if (!currentSubmissionId) return;
     
     const grade = document.getElementById('grade-input').value;
     const feedback = document.getElementById('feedback-input').value;
-
-    if (action === 'approved' && (!grade || grade < 0 || grade > 100)) {
+    
+    // Faqat tasdiqlashda bahoni tekshirish
+    if (status === 'approved' && (!grade || grade < 0 || grade > 100)) {
         alert("Iltimos, 0 dan 100 gacha bo'lgan to'g'ri baho kiriting.");
         return;
     }
     
-    const url = `/submissions/approve/${currentSubmissionId}`; // Bizning Backend marshrutimiz
+    // 🔥 Yangi marshrutga moslash
+    const url = `/submissions/review/${currentSubmissionId}`; 
 
     try {
         const response = await apiRequest(url, {
             method: 'PUT',
             headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
-                grade: (action === 'approved' ? grade : 0), // Rad etishda baho 0 bo'lishi mumkin
-                feedback: feedback 
+                grade: (status === 'approved' ? grade : 0),
+                feedback: feedback,
+                status: status // 🔥 status ni Backendga yuboramiz
             })
         });
 
-        alert(`Vazifa muvaffaqiyatli ${action === 'approved' ? 'tasdiqlandi' : 'rad etildi'}. Talaba progressi yangilandi.`);
+        alert(response.message); // Backenddan kelgan xabarni ko'rsatish
         
-        // Modalni yopish va ro'yxatni yangilash
         modal.style.display = 'none';
-        await fetchPendingSubmissions();
+        await fetchPendingSubmissions(); // Ro'yxatni yangilash
 
     } catch (error) {
-        console.error("Vazifani tasdiqlashda xato:", error);
-        alert(`❌ Xato: Vazifani ${action} qilishda xato yuz berdi. Konsolni tekshiring.`);
+        console.error("Vazifani baholashda xato:", error);
+        alert(`❌ Xato: Vazifani baholashda xato yuz berdi. Konsolni tekshiring.`);
     }
 }
+
+
+// async function handleApproval(action) {
+//     if (!currentSubmissionId) return;
+    
+//     const grade = document.getElementById('grade-input').value;
+//     const feedback = document.getElementById('feedback-input').value;
+
+//     if (action === 'approved' && (!grade || grade < 0 || grade > 100)) {
+//         alert("Iltimos, 0 dan 100 gacha bo'lgan to'g'ri baho kiriting.");
+//         return;
+//     }
+    
+//     const url = `/submissions/approve/${currentSubmissionId}`; // Bizning Backend marshrutimiz
+
+//     try {
+//         const response = await apiRequest(url, {
+//             method: 'PUT',
+//             headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+//             body: JSON.stringify({ 
+//                 grade: (action === 'approved' ? grade : 0), // Rad etishda baho 0 bo'lishi mumkin
+//                 feedback: feedback 
+//             })
+//         });
+
+//         alert(`Vazifa muvaffaqiyatli ${action === 'approved' ? 'tasdiqlandi' : 'rad etildi'}. Talaba progressi yangilandi.`);
+        
+//         // Modalni yopish va ro'yxatni yangilash
+//         modal.style.display = 'none';
+//         await fetchPendingSubmissions();
+
+//     } catch (error) {
+//         console.error("Vazifani tasdiqlashda xato:", error);
+//         alert(`❌ Xato: Vazifani ${action} qilishda xato yuz berdi. Konsolni tekshiring.`);
+//     }
+// }
