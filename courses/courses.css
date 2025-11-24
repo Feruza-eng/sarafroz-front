@@ -15,6 +15,24 @@
 
 .courses-header h2 {
     color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.courses-header h2 a {
+    /* margin-left: 40px; */
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    background-color: white;
+    display: inline-block;
+    background-color: #007bff;
+    text-decoration: none;
+    color: white;
+    text-align: right;
+    box-shadow: -3px 3px 5px black;
+    font-size: 18px;
 }
 
 #add-course-btn {
@@ -174,6 +192,16 @@
     background-color: #5a6268;
 }
 
+.course-card button {
+    background-color: #0a84ff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.course-card button:disabled {
+    background-color: #5a6268;
+}
 /* --- YUQORIDAGI MAKSIMAL KARTANI YANGILASH --- */
 /* Agar yuqorida kurs yaratish uchun .course-form-card stili bo'lsa, uni yuqoridagi 
    .course-form-card stili bilan almashtiring. */

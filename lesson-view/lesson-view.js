@@ -7,9 +7,13 @@ const lessonListEl = document.getElementById('lesson-list');
 const lessonTitleEl = document.getElementById('lesson-title');
 const lessonContentEl = document.getElementById('lesson-content');
 const taskSubmissionBoxEl = document.getElementById('task-submission-box');
-const submissionInputEl = document.getElementById('task-solution'); // HTML dan to'g'ri ID
+// const submissionInputEl = document.getElementById('task-solution'); // HTML dan to'g'ri ID
 const submitTaskBtn = document.getElementById('submit-task-btn');
 const submissionMessageEl = document.getElementById('submission-message');
+
+const submissionFileEl = document.getElementById('task-solution'); // 🔥 Endi File Input
+const submissionCommentEl = document.getElementById('submission-comment'); // 🔥 Yangi izoh maydoni
+
 let currentCourseId = null;
 let allLessons = [];
 let currentLessonId = null;
@@ -120,7 +124,7 @@ function renderLessonList(lessons) {
         }
 
         // Kontent turi nomini to'g'ri ko'rsatish
-        li.innerHTML = `${icon} ${lesson.order}. ${lesson.title} [${contentType}]`; 
+        li.innerHTML = `${icon} ${lesson.order}. ${lesson.title} `; 
         li.dataset.lessonId = lesson._id;
         
         // Bosish mantiqi faqat qulflanmagan darslar uchun
@@ -193,7 +197,6 @@ async function displayLessonContent(lesson) {
         // Hozircha oddiy iframe ishlatamiz.
         contentHTML += `
             <div class="lesson-video">
-                <h3>Video dars</h3>
                 <iframe width="100%" height="400" src="${lesson.videoUrl}" frameborder="0" allowfullscreen></iframe>
             </div>
         `;
@@ -203,8 +206,8 @@ async function displayLessonContent(lesson) {
     if (lesson.documentationUrl) {
         contentHTML += `
             <div class="lesson-documentation">
-                <h3>Qo'llanma va materiallar</h3>
-                <p>Qo'shimcha material: <a href="${lesson.documentationUrl}" target="_blank">Qo'llanmani ochish</a></p>
+                <br>
+                <p>Qo'llanma va materiallar: <a href="${lesson.documentationUrl}" target="_blank">Qo'llanmani ochish</a></p><br>
             </div>
         `;
     }
@@ -213,8 +216,8 @@ async function displayLessonContent(lesson) {
     if (lesson.taskDescription) {
         contentHTML += `
             <div class="lesson-task-description">
-                <h3>Vazifa tavsifi</h3>
                 <p>${lesson.taskDescription}</p>
+                <br>
         `;
         // Agar vazifa fayli mavjud bo'lsa
         if (lesson.taskFileUrl) {
@@ -229,15 +232,15 @@ async function displayLessonContent(lesson) {
         if (lesson.progressStatus === 'submitted') {
              submissionMessageEl.textContent = '⏳ Vazifa topshirilgan. O\'qituvchi tekshirishini kuting.';
              submitTaskBtn.disabled = true;
-             submissionInputEl.disabled = true;
+             submissionFileEl.disabled = true;
         } else if (lesson.progressStatus === 'completed' || lesson.progressStatus === 'approved') {
              submissionMessageEl.textContent = '✅ Vazifa muvaffaqiyatli yakunlandi.';
              submitTaskBtn.disabled = true;
-             submissionInputEl.disabled = true;
+             submissionFileEl.disabled = true;
         } else {
              submissionMessageEl.textContent = '';
              submitTaskBtn.disabled = false;
-             submissionInputEl.disabled = false;
+             submissionFileEl.disabled = false;
         }
 
     } else {
@@ -323,45 +326,96 @@ async function displayLessonContent(lesson) {
 // VAZIFA TOPSHIRISH MANTIQI
 // ----------------------------------------------------------------------
 
+// async function handleSubmitTask() {
+//     if (!currentLessonId) {
+//         submissionMessageEl.textContent = 'Xato: Dars ID si topilmadi.';
+//         return;
+//     }
+    
+//     const submissionText = submissionInputEl.value.trim();
+//     if (submissionText === '') {
+//         submissionMessageEl.textContent = 'Iltimos, vazifa yechimi manzilini yoki matnini kiriting.';
+//         return;
+//     }
+
+//     try {
+//         submissionMessageEl.textContent = 'Vazifa yuborilmoqda...';
+        
+//         const data = {
+//             lessonId: currentLessonId,
+//             submissionText: submissionText,
+//             courseId: currentCourseId, // Bu ham kerak bo'lishi mumkin
+//         };
+
+//         // Backendda Submission yaratish uchun API so'rovi
+//         const response = await apiRequest('/submissions', { // Sizning submission endpointingiz
+//             method: 'POST',
+//             headers: { 
+//                 'Authorization': `Bearer ${token}`,
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(data)
+//         });
+
+//         submissionMessageEl.textContent = `✅ Vazifa muvaffaqiyatli topshirildi. Status: ${response.submission?.status || 'Tekshirilmoqda'}.`;
+//         submissionInputEl.value = ''; // Inputni tozalash
+        
+//         // Dars ro'yxatini yangilash orqali statusni ko'rsatish
+//         await fetchCourseAndLessons(currentCourseId); 
+
+//     } catch (error) {
+//         console.error('Vazifani topshirishda xato:', error);
+//         submissionMessageEl.textContent = `❌ Vazifani topshirishda xato: ${error.message || 'Server xatosi'}`;
+//     }
+// }
+
+// ----------------------------------------------------------------------
+// 🔥 VAZIFA TOPSHIRISH MANTIQI (FAYL UCHUN) 🔥
+// ----------------------------------------------------------------------
+
 async function handleSubmitTask() {
-    if (!currentLessonId) {
-        submissionMessageEl.textContent = 'Xato: Dars ID si topilmadi.';
+    if (!currentLessonId || !currentCourseId) {
+        submissionMessageEl.textContent = 'Xato: Dars yoki Kurs ID si topilmadi.';
         return;
     }
     
-    const submissionText = submissionInputEl.value.trim();
-    if (submissionText === '') {
-        submissionMessageEl.textContent = 'Iltimos, vazifa yechimi manzilini yoki matnini kiriting.';
+    const file = submissionFileEl.files[0]; // Tanlangan faylni olish
+    const comment = submissionCommentEl.value.trim();
+    
+    if (!file) {
+        submissionMessageEl.textContent = 'Iltimos, vazifa yechim faylini tanlang.';
         return;
     }
 
     try {
         submissionMessageEl.textContent = 'Vazifa yuborilmoqda...';
         
-        const data = {
-            lessonId: currentLessonId,
-            submissionText: submissionText,
-            courseId: currentCourseId, // Bu ham kerak bo'lishi mumkin
-        };
-
+        // 🔥 FormData obyektini yaratish
+        const formData = new FormData();
+        formData.append('submissionFile', file); // Backend middleware nomi: 'submissionFile'
+        formData.append('lessonId', currentLessonId);
+        formData.append('courseId', currentCourseId);
+        formData.append('submissionComment', comment);
+        
         // Backendda Submission yaratish uchun API so'rovi
-        const response = await apiRequest('/submissions', { // Sizning submission endpointingiz
+        const response = await apiRequest('/submissions', {
             method: 'POST',
             headers: { 
                 'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
+                // 🔥 MUHIM: Content-Type sarlavhasini O'CHIRIB TASHLANG
+                // Chunki FormData o'zi uni multipart/form-data deb belgilaydi
             },
-            body: JSON.stringify(data)
+            body: formData // 🔥 FormData ni yuboramiz
         });
 
-        submissionMessageEl.textContent = `✅ Vazifa muvaffaqiyatli topshirildi. Status: ${response.submission?.status || 'Tekshirilmoqda'}.`;
-        submissionInputEl.value = ''; // Inputni tozalash
+        submissionMessageEl.textContent = `✅ Vazifa muvaffaqiyatli topshirildi. Status: ${response.progress?.status || 'submitted'}.`;
+        submissionFileEl.value = ''; // Inputni tozalash
+        submissionCommentEl.value = ''; // Izoh tozalash
         
-        // Dars ro'yxatini yangilash orqali statusni ko'rsatish
         await fetchCourseAndLessons(currentCourseId); 
 
     } catch (error) {
         console.error('Vazifani topshirishda xato:', error);
-        submissionMessageEl.textContent = `❌ Vazifani topshirishda xato: ${error.message || 'Server xatosi'}`;
+        submissionMessageEl.textContent = `❌ Vazifani topshirishda xato: ${error.message || 'Server xatosi'}. Fayl hajmi yoki turini tekshiring.`;
     }
 }

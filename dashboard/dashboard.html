@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Shaxsiy Kabinet</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard - Shaxsiy Kabinet</title>
+        <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
-    <div id="header-container"></div>
+    <header class="dash-header">
+        <h2>Shaxsiy Kabinet</h2>
+        <div class="user-mini-box">
+            <span id="mini-username"></span>
+        </div>
+    </header>
 
     <main class="dashboard-main">
         <div class="profile-card">
-            <h2>Shaxsiy Kabinet</h2>
-            
+            <div class="profile-top">
+                <img src="../assets/images/img-logo.png" class="profile-img" alt="User">
+                <h3 id="profile-title">Foydalanuvchi ma'lumotlari</h3>
+            </div>
+
             <div id="loading-message">Ma'lumotlar yuklanmoqda...</div>
+
             <div id="profile-info" style="display: none;">
-                
-                <div class="info-group">
-                    <label>Ism:</label>
+                <div class="info-box">
+                    <p>Ism</p>
                     <span id="user-name"></span>
                 </div>
-                
-                <div class="info-group">
-                    <label>Email:</label>
+
+                <div class="info-box">
+                    <p>Email</p>
                     <span id="user-email"></span>
                 </div>
-                
-                <div class="info-group">
-                    <label>Rol (Lavozim):</label>
+
+                <div class="info-box">
+                    <p>Lavozim</p>
                     <span id="user-role"></span>
                 </div>
 
-                <div class="info-group">
-                    <label>ID:</label>
+                <div class="info-box">
+                    <p>ID</p>
                     <span id="user-id"></span>
                 </div>
+            </div>
 
-                </div>
-            
-            <button id="logout-btn">Chiqish (Logout)</button>
+            <button id="logout-btn">🚪 Chiqish</button>
         </div>
-    </main>
 
-    <div id="footer-container">
-        <a href="../courses/courses.html">courses</a>
-    </div>
+        <aside class="sidebar">
+            <h3>Menyu</h3>
+            <ul>
+                <li><a href="../courses/courses.html">📚 Kurslar</a></li>
+                <li><a href="#">⚙️ Sozlamalar</a></li>
+                <li><a href="#">📨 Xabarlar</a></li>
+                <li><a href="#">📊 Statistika</a></li>
+            </ul>
+        </aside>
+    </main>
 
     <script type="module" src="../assets/js/main.js"></script>
     <script type="module" src="dashboard.js"></script>
 </body>
 </html>
+
+
