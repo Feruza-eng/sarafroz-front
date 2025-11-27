@@ -164,3 +164,40 @@ body.dark .nav-links a{
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 500px){
+    nav.navbar {
+        padding: 10px 20px;
+    }
+    nav .logo {
+        font-size: 20px;
+    }
+    nav ul.nav-links li a{
+        font-size: 14px;
+    }
+    nav ul.nav-links {
+        gap: 20px;
+    }
+    nav a.btn-login {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    section.hero {
+        padding: 20px;
+    }
+    section.hero div.left {
+        padding: 30px;
+    }
+    section.hero div.right {
+        display: none;
+    }
+    section.hero div.left a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    section.hero div.left p{
+        font-size: 14px;
+    }
+    section.hero div.left h1 {
+        font-size: 28px;
+    }
+}
