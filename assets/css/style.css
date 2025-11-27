@@ -180,6 +180,7 @@ body.dark .nav-links a{
     nav a.btn-login {
         padding: 10px 20px;
         font-size: 14px;
+        display: none;
     }
     section.hero {
         padding: 20px;
