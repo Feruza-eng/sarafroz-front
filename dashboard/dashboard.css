@@ -7,7 +7,7 @@ body {
 
 .dash-header {
     background: linear-gradient(90deg, #007bff, #00b4ff);
-    padding: 10px 40px;
+    padding: 5px;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -30,9 +30,11 @@ body {
 /* Profil karta */
 .profile-card {
     background: white;
-    padding: 25px;
+    padding: 15px;
     border-radius: 12px;
-    width: 70%;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -93,7 +95,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 25%;
+    width: 100%;
     background: #ffffff;
     padding: 20px;
     border-radius: 12px;
@@ -107,13 +109,17 @@ body {
 }
 
 .sidebar ul {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
 }
 
-.sidebar li {
+/* .sidebar li {
     margin-bottom: 15px;
-}
+} 
+*/
 
 .sidebar a {
     text-decoration: none;
@@ -123,6 +129,7 @@ body {
 }
 
 .sidebar a:hover {
+    cursor: pointer;
     color: #007bff;
     margin-left: 5px;
 }

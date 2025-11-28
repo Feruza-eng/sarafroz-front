@@ -16,6 +16,7 @@
 .courses-header h2 {
     color: #007bff;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -23,16 +24,13 @@
 
 .courses-header h2 a {
     /* margin-left: 40px; */
-    border: 1px solid #007bff;
-    padding: 10px 20px;
-    background-color: white;
-    display: inline-block;
-    background-color: #007bff;
-    text-decoration: none;
-    color: white;
-    text-align: right;
-    box-shadow: -3px 3px 5px black;
-    font-size: 18px;
+    padding: 12px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 16px;
+        border: 2px solid #0a84ff;
+        color: #0a84ff;
+        transition: 0.3s;
 }
 
 #add-course-btn {
@@ -197,6 +195,7 @@
     color: white;
     border: none;
     padding: 5px 10px;
+    margin: 2px;
     cursor: pointer;
 }
 .course-card button:disabled {
@@ -205,3 +204,18 @@
 /* --- YUQORIDAGI MAKSIMAL KARTANI YANGILASH --- */
 /* Agar yuqorida kurs yaratish uchun .course-form-card stili bo'lsa, uni yuqoridagi 
    .course-form-card stili bilan almashtiring. */
+    
+    .btn-outline{
+        padding: 12px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 16px;
+        border: 2px solid #0a84ff;
+        color: #0a84ff;
+        transition: 0.3s;
+    }
+    
+    .btn-outline:hover{
+        background: #0a84ff;
+        color: white;
+    }
