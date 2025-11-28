@@ -6,13 +6,13 @@ body {
 }
 
 .dash-header {
-    background: linear-gradient(90deg, #007bff, #00b4ff);
+    /* background: linear-gradient(90deg, #007bff, #00b4ff); */
     padding: 5px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
 }
 
 .user-mini-box {
