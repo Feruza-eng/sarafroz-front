@@ -1,20 +1,57 @@
+/*
+=====================================================
+    GLOBAL STYLELAR (courses.css)
+=====================================================
+*/
+
+/* O'zgaruvchilar (CSS Variables) - Ranglarni boshqarish uchun */
+:root {
+    --primary-color: #007bff; /* Moviy (Asosiy harakatlar) */
+    --secondary-color: #6c757d; /* Kulrang (Bekor qilish/Ikkilamchi) */
+    --success-color: #28a745; /* Yashil (Muvaffaqiyat) */
+    --danger-color: #dc3545; /* Qizil (O'chirish/Narx) */
+    --background-light: #f4f7f8; /* Ochiq fon */
+    --card-background: #ffffff; /* Karta foni */
+    --text-dark: #343a40; /* To'q rangli matn */
+    --text-muted: #6c757d; /* Xira rangli matn */
+    --border-color: #e9ecef; /* Chegara rangi */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
 .courses-main {
-    padding: 20px;
-    max-width: 1200px;
+    padding: 30px 20px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
+/*
+=====================================================
+    HEADER USLUBLARI
+=====================================================
+*/
 .courses-header {
     display: flex;
+    flex-direction: column; /* Mobil uchun ustma-ust tushadi */
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
 }
 
 .courses-header h2 {
-    color: #007bff;
+    color: var(--text-dark);
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0 0 20px 0; /* Mobil uchun ostidan joy qoldirish */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -22,200 +59,362 @@
     width: 100%;
 }
 
+/* Kurs sarlavhasi ichidagi navigatsiya tugmalari */
 .courses-header h2 a {
-    /* margin-left: 40px; */
-    padding: 12px 30px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-size: 16px;
-        border: 2px solid #0a84ff;
-        color: #0a84ff;
-        transition: 0.3s;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    margin-right: 10px; /* Tugmalar orasidagi bo'shliq */
 }
 
+.courses-header h2 a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Yangi Kurs Yaratish Asosiy Tugmasi */
 #add-course-btn {
-    padding: 10px 15px;
-    background-color: #28a745;
+    padding: 12px 20px;
+    background-color: var(--success-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    width: 100%; /* Mobil uchun to'liq kenglik */
+    max-width: 250px; /* Katta ekranlarda chegaralash */
 }
 
 #add-course-btn:hover {
-    background-color: #218838;
+    background-color: #1e7e34;
 }
 
-/* Kurslarni Grid tizimida ko'rsatish */
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-}
+/*
+=====================================================
+    FORMA MODALLARI (CREATE & EDIT)
+=====================================================
+*/
 
-.course-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-.course-card h4 {
-    color: #333;
-    margin-top: 0;
-    font-size: 1.3em;
-}
-
-.course-card p {
-    color: #666;
-    flex-grow: 1;
-}
-
-.course-card .price {
-    font-weight: bold;
-    color: #dc3545;
-    margin-top: 10px;
-}
-
-.course-card .teacher {
-    font-size: 0.9em;
-    color: #007bff;
-    margin-bottom: 5px;
-}
-
-/* Yaratish formasi uslubi */
-.course-form-card {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-#create-course-form input,
-#create-course-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-/* --- YANGI QO'SHILGAN STYLE'LAR --- */
-
-/* Kurs yaratish/tahrirlash formasi konteynerlari uchun umumiy modal stili */
 #create-form-container, 
 #edit-form-container {
-    /* Modal fon (background) effekti */
-    position: fixed; /* Sahifada doimiy joylashish */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255); /* Yarim shaffof qora fon */
-    display: flex; /* Kontentni markazga joylash */
+    background-color: rgba(0, 0, 0, 0.7); /* To'qroq, yarim shaffof fon */
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Boshqa elementlardan ustun turishi uchun */
-    padding: 20px;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Chiroyli blur effekti */
 }
 
-
-/* Formaning ichidagi karta (card) stili */
 .course-form-card {
-    background: #fff;
+    background: var(--card-background);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 90%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    max-width: 550px;
+    width: 95%;
+    transform: scale(0.95); /* Animatsiya uchun tayyorlanish */
+    animation: fadeInScale 0.3s ease-out forwards;
 }
 
-/* Forma ichidagi elementlar uchun uslublar */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.course-form-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+#create-course-form label,
+#edit-course-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
 #create-course-form input,
 #create-course-form textarea,
 #edit-course-form input,
 #edit-course-form textarea,
-#edit-course-form select { /* Tahrirlashdagi select uchun ham */
+#edit-course-form select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
     box-sizing: border-box;
     font-size: 1em;
+    transition: border-color 0.3s;
 }
 
-#edit-course-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+#create-course-form input:focus,
+#edit-course-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
-/* Tugmalar uchun uslublar */
+/* Forma tugmalari uchun umumiy uslub */
+.course-form-card button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+/* Asosiy Submit Tugmasi */
 #create-course-form button[type="submit"],
 #edit-course-form button[type="submit"] {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s;
+    margin-right: 15px;
 }
-
 #create-course-form button[type="submit"]:hover,
 #edit-course-form button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+/* Bekor qilish tugmasi */
 #cancel-create-btn,
 #cancel-edit-btn {
-    background-color: #6c757d;
+    background-color: var(--secondary-color);
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
-
 #cancel-create-btn:hover,
 #cancel-edit-btn:hover {
     background-color: #5a6268;
 }
 
-.course-card button {
-    background-color: #0a84ff;
-    color: white;
+/*
+=====================================================
+    KURS KARTALARI (GRID) USLUBLARI
+=====================================================
+*/
+
+.courses-grid {
+    display: grid;
+    /* Katta ekranlar uchun 3, kichiklar uchun 2 va undan past */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 30px;
+}
+
+.course-card {
+    background: var(--card-background);
     border: none;
-    padding: 5px 10px;
-    margin: 2px;
-    cursor: pointer;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.course-card button:disabled {
-    background-color: #5a6268;
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
 }
-/* --- YUQORIDAGI MAKSIMAL KARTANI YANGILASH --- */
-/* Agar yuqorida kurs yaratish uchun .course-form-card stili bo'lsa, uni yuqoridagi 
-   .course-form-card stili bilan almashtiring. */
-    
-    .btn-outline{
-        padding: 12px 30px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-size: 16px;
-        border: 2px solid #0a84ff;
-        color: #0a84ff;
-        transition: 0.3s;
+
+.course-card h4 {
+    color: var(--text-dark);
+    margin-top: 0;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.course-card p {
+    color: var(--text-muted);
+    flex-grow: 1;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.course-card .teacher {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.course-card .price {
+    font-weight: bold;
+    color: var(--danger-color); /* Qizil rang orqali narxni ajratish */
+    font-size: 1.2em;
+    margin-top: 5px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.course-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Kurs kartasi ichidagi tugmalar */
+.course-card button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    flex-grow: 1;
+    min-width: 100px; /* Tugmalar mobil ekranda ham yaxshi ko'rinishi uchun */
+}
+
+/* Tahrirlash, O'chirish, Boshqarish tugmalari (O'qituvchi/Admin uchun) */
+.edit-btn, .manage-btn {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s;
+}
+.edit-btn:hover, .manage-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Ro'yxatdan o'tish tugmasi (Talaba uchun) */
+.enroll-btn {
+    background-color: var(--success-color);
+    color: white;
+}
+.enroll-btn:hover {
+    background-color: #1e7e34;
+}
+
+.enrolled-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: default;
+    opacity: 0.8;
+}
+.enrolled-btn:disabled {
+    cursor: default;
+}
+
+
+/* Loading xabari */
+#loading-message {
+    grid-column: 1 / -1; /* To'liq kenglik olish */
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: var(--text-muted);
+}
+
+/*
+=====================================================
+    MEDIA QUERIES (Moslanuvchan Dizayn)
+=====================================================
+*/
+
+/* Katta Ekranlar (1024px va undan yuqori) - Hozirgi uslublar yetarli */
+
+
+/* O'rtacha Ekranlar (Planshetlar, 768px gacha) */
+@media (max-width: 992px) {
+    .courses-main {
+        padding: 20px 15px;
     }
     
-    .btn-outline:hover{
-        background: #0a84ff;
-        color: white;
+    .courses-grid {
+        /* Ikkita ustunli ko'rinishni saqlaymiz */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
     }
+    
+    .courses-header h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Kichik Ekranlar (Mobil telefonlar, 576px gacha) */
+@media (max-width: 576px) {
+    .courses-main {
+        padding: 15px 10px;
+    }
+
+    .courses-header h2 {
+        flex-direction: column; /* Sarlavha elementlarini vertikal joylashtirish */
+        font-size: 1.5em;
+        text-align: center;
+    }
+    
+    /* Navigatsiya tugmalari (Orqaga / Mening kurslarim) */
+    .courses-header h2 a {
+        display: block;
+        margin: 5px 0;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Kurs yaratish tugmasi */
+    #add-course-btn {
+        margin-top: 15px;
+        max-width: none;
+    }
+
+    .courses-grid {
+        /* Bitta ustunli ko'rinish */
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .course-card {
+        padding: 15px;
+    }
+    
+    .course-card h4 {
+        font-size: 1.2em;
+    }
+    
+    .course-actions {
+        /* Mobil uchun tugmalarni to'liq kenglikka yoyish */
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .course-form-card button {
+        /* Modal ichidagi tugmalarni mobil uchun moslash */
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Cancel tugmasini alohida pastga tushirish (agar bir qatorda joylashsa) */
+    #create-course-form, #edit-course-form {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,69 +1,261 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurslar-Musoyev</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="courses.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurslar — Musoyev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- SASS/SCSS kabi preprocessors yo'q, oddiy CSS -->
+  <style>
+    :root{
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #0a84ff;
+      --accent-2: #0b74e6;
+      --success: #28a745;
+      --danger: #dc3545;
+      --glass: rgba(255,255,255,0.6);
+      --radius-lg: 14px;
+      --radius-md: 8px;
+      --shadow-sm: 0 6px 18px rgba(12, 24, 50, 0.06);
+      --shadow-md: 0 10px 30px rgba(12, 24, 50, 0.08);
+    }
+
+    /* Reset & base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg), #eef3fb 120%);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 20px;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    /* Header */
+    .courses-header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:28px;
+    }
+
+    .breadcrumbs{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .breadcrumbs a{
+      color:var(--accent);
+      text-decoration:none;
+      background:transparent;
+      padding:8px 12px;
+      border-radius:10px;
+      transition:all .18s ease;
+    }
+    .breadcrumbs a:hover{background:rgba(10,132,255,0.06)}
+
+    h1.page-title{
+      margin:0;
+      font-size:20px;
+      color:#07203a;
+      letter-spacing: -0.2px;
+    }
+
+    .controls{display:flex;gap:10px;align-items:center}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:10px;border:none;cursor:pointer;
+      font-weight:600;font-size:14px;
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+
+    .btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;box-shadow:var(--shadow-sm)}
+    .btn-ghost{background:transparent;border:1px solid rgba(10,132,255,0.12);color:var(--accent)}
+    .btn-success{background:var(--success);color:white}
+
+    /* Grid */
+    .courses-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+      align-items:start;
+    }
+
+    /* Card */
+    .course-card{
+      background:var(--card);
+      border-radius:var(--radius-md);
+      padding:18px;
+      box-shadow:var(--shadow-md);
+      border:1px solid rgba(10,16,30,0.04);
+      display:flex;flex-direction:column;gap:12px;
+      min-height:180px;
+    }
+
+    .course-meta{display:flex;justify-content:space-between;align-items:center;gap:12px}
+
+    .course-title{font-size:16px;font-weight:700;color:#0b2033;margin:0}
+    .course-desc{color:var(--muted);font-size:14px;margin:0;flex:1}
+
+    .teacher{font-size:13px;color:var(--accent);font-weight:600}
+    .price{font-weight:800;color:var(--danger)}
+
+    .course-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Enrolled badge */
+    .enrolled-btn{background:transparent;border:1px solid rgba(40,167,69,0.12);color:var(--success);padding:8px 10px;border-radius:8px;font-weight:700}
+    .enroll-btn{background:var(--accent);color:white;padding:8px 10px;border-radius:8px}
+
+    .icon{
+      display:inline-grid;place-items:center;width:28px;height:28px;border-radius:6px;background:rgba(10,132,255,0.08);color:var(--accent);font-weight:700}
+
+    /* Loading */
+    #loading-message{padding:24px;text-align:center;color:var(--muted);background:transparent}
+
+    /* Form modal overlay (modern glassy) */
+    .modal-overlay{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:linear-gradient(0deg,rgba(6,18,38,0.45), rgba(6,18,38,0.45));backdrop-filter: blur(6px);z-index:1200}
+    .modal-card{width:100%;max-width:560px;background:linear-gradient(180deg,var(--glass), rgba(255,255,255,0.9));padding:22px;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.5);border:1px solid rgba(255,255,255,0.6)}
+
+    .form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+    label{font-size:13px;font-weight:700;color:#0b2033}
+    input[type=text], input[type=number], textarea, select{
+      width:100%;padding:12px;border-radius:8px;border:1px solid rgba(11,16,24,0.06);font-size:14px;background:transparent
+    }
+
+    .form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:10px}
+
+    /* Small tweaks */
+    .teacher small{display:block;color:var(--muted);font-weight:500}
+
+    /* Responsive */
+    @media (max-width:1024px){
+      .courses-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width:720px){
+      body{padding:18px 12px}
+      .courses-grid{grid-template-columns:1fr}
+      .courses-header{flex-direction:column;align-items:flex-start;gap:12px}
+      .controls{width:100%;justify-content:space-between}
+      .btn{padding:10px 12px}
+    }
+
+    @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+    /* Utility */
+    .muted{color:var(--muted);font-weight:500}
+    .hidden{display:none}
+
+  </style>
 </head>
 <body>
+  <div class="container">
 
-    <!-- <div id="header-container"></div> -->
-    <!-- <h2></h2> -->
-
-    <main class="courses-main">
-        <div class="courses-header">
-            <h2><a href="../dashboard/dashboard.html">Orqaga</a>Barcha Kurslar Ro'yxati  <a href="../my-courses/my-courses.html">Mening kurslarim</a></h2>
-            <button id="add-course-btn" style="display:none;">+ Yangi Kurs Yaratish</button>
+    <header class="courses-header" aria-label="Kurslar boshqaruvi">
+      <div>
+        <div class="breadcrumbs" aria-hidden="false">
+          <a href="../dashboard/dashboard.html">Orqaga</a>
+          <span style="opacity:.65">/</span>
+          <h1 class="page-title">Barcha kurslar ro'yxati</h1>
         </div>
+        <p class="muted">Tezkor ko'rinish — kurslar, narx va o'qituvchi ma'lumotlari.</p>
+      </div>
 
-        <div id="create-form-container" class="course-form-card" style="display:none;">
-            <h3>Yangi kurs qo'shish</h3>
-            <form id="create-course-form">
-                <input type="text" id="course-title" placeholder="Kurs nomi" required>
-                <textarea id="course-description" placeholder="Qisqa tavsifi" required></textarea>
-                <input type="number" id="course-price" placeholder="Narxi ($)" min="0" required>
-                <button type="submit">Kursni Saqlash</button>
-                <button type="button" id="cancel-create-btn">Bekor qilish</button>
-            </form>
-        </div>
+      <div class="controls">
+        <a class="btn btn-ghost" href="../my-courses/my-courses.html">Mening kurslarim</a>
+        <button id="add-course-btn" class="btn btn-primary hidden">+ Yangi kurs yaratish</button>
+      </div>
+    </header>
 
-        <!--  -->
-        <div id="edit-form-container" class="course-form-card" style="display:none;">
-            <h3>Kursni Tahrirlash</h3>
-            <form id="edit-course-form">
-                <input type="hidden" id="edit-course-id"> 
-
-                <label for="edit-title">Kurs Nomi:</label>
-                <input type="text" id="edit-title" required>
-
-                <label for="edit-description">Tavsifi:</label>
-                <textarea id="edit-description" required></textarea>
-
-                <label for="edit-price">Narxi ($):</label>
-                <input type="number" id="edit-price" min="0" required>
-                
-                <label for="edit-ispublished">Nashr qilish:</label>
-                <select id="edit-ispublished">
-                    <option value="false">Yo'q (Qoralama)</option>
-                    <option value="true">Ha (E'lon qilish)</option>
-                </select>
-
-                <button type="submit">Yangilash</button>
-                <button type="button" id="cancel-edit-btn">Bekor qilish</button>
-            </form>
-        </div>
-        <!--  -->
-
-        <div id="courses-list" class="courses-grid">
-            <p id="loading-message">Kurslar yuklanmoqda...</p>
-        </div>
+    <!-- Grid: kurslar joyi -->
+    <main>
+      <div id="courses-list" class="courses-grid" aria-live="polite">
+        <p id="loading-message">Kurslar yuklanmoqda...</p>
+      </div>
     </main>
 
-    <div id="footer-container"></div>
+    <footer style="margin-top:34px;color:var(--muted);font-size:13px">© Musoyev — Kurslar paneli</footer>
 
-    <script type="module" src="../assets/js/main.js"></script>
-    <script type="module" src="courses.js"></script>
+  </div>
+
+  <!-- Modal overlaylar (HTML elementlar JS tomonidan toggle qilinadi) -->
+  <div id="create-form-container" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <h3 style="margin:0 0 8px 0">Yangi kurs qo'shish</h3>
+      <form id="create-course-form">
+        <div class="form-row">
+          <label for="course-title">Kurs nomi</label>
+          <input id="course-title" type="text" placeholder="Kurs nomi" required />
+        </div>
+        <div class="form-row">
+          <label for="course-description">Qisqa tavsifi</label>
+          <textarea id="course-description" rows="4" placeholder="Kursni bir-ikki jumla bilan tushuntiring" required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="course-price">Narxi ($)</label>
+          <input id="course-price" type="number" min="0" placeholder="0" required />
+        </div>
+        <div class="form-actions">
+          <button type="button" id="cancel-create-btn" class="btn btn-ghost">Bekor qilish</button>
+          <button type="submit" class="btn btn-primary">Kursni Saqlash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="edit-form-container" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card">
+      <h3 style="margin:0 0 8px 0">Kursni tahrirlash</h3>
+      <form id="edit-course-form">
+        <input type="hidden" id="edit-course-id" />
+        <div class="form-row">
+          <label for="edit-title">Kurs Nomi</label>
+          <input id="edit-title" type="text" required />
+        </div>
+        <div class="form-row">
+          <label for="edit-description">Tavsifi</label>
+          <textarea id="edit-description" rows="4" required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="edit-price">Narxi ($)</label>
+          <input id="edit-price" type="number" min="0" required />
+        </div>
+        <div class="form-row">
+          <label for="edit-ispublished">Nashr qilish</label>
+          <select id="edit-ispublished">
+            <option value="false">Yo'q (Qoralama)</option>
+            <option value="true">Ha (E'lon qilish)</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="cancel-edit-btn" class="btn btn-ghost">Bekor qilish</button>
+          <button type="submit" class="btn btn-primary">Yangilash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS fayllar (o'zgartirmaysiz deb aytdingiz) -->
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="courses.js"></script>
 </body>
 </html>
