@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatika Mavzusi</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px;
+}
+
+.main-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.image-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+/* Har bir rasm uchun qizil chegara, faqat ko'rinish uchun */
+.page-border {
+    border: 1px solid #ff0000;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.hidden-image {
+    display: none;
+}
+
+/* Sarlavhalar */
+h1, h2, h3, h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000;
+}
+h1 { font-size: 1.5em; text-align: center; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.1em; }
+h4 { font-size: 1em; }
+
+p {
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+ul { list-style-type: none; /* Standart markerlarni o'chirish */ }
+ol { list-style-type: decimal; }
+li {
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+/* Asosiy ustunlar tuzilishi */
+.column-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.left-column, .right-column {
+    flex: 1;
+    padding: 5px;
+}
+.content-column {
+    border: 1px solid #ccc;
+}
+.block {
+    margin-bottom: 15px;
+}
+
+/* Maxsus list uslublari (checkmark va bullet) */
+.checkmark-list {
+    list-style: none; /* Standart markerlarni o'chirish */
+    padding-left: 0;
+}
+.checkmark-list li {
+    padding-left: 20px; /* Checkmark uchun joy */
+    position: relative;
+    margin-bottom: 8px;
+}
+.checkmark-list li .checkmark {
+    position: absolute;
+    left: 0;
+    color: green; /* Checkmark rangi */
+    font-weight: bold;
+}
+.checkmark-list li .bullet {
+    position: absolute;
+    left: 0; /* Checkmark bilan bir qatorda bo'lishi uchun */
+    margin-left: 20px; /* Checkmarkdan keyin turishi uchun */
+    color: black; /* Bullet rangi */
+    font-weight: bold;
+}
+
+.bullet-list { /* Faqat dumaloq bulletlar uchun */
+    list-style: none;
+    padding-left: 0;
+}
+.bullet-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+}
+.bullet-list li .bullet {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.bullet-list li .bullet-alpha { /* Alfa belgi */
+    margin-left: 20px; /* Asosiy bulletdan keyin turishi uchun */
+    color: #555;
+    font-weight: bold;
+}
+
+
+.section-title-narrow { /* Sarlavhalar va ro'yxatlarning qatoriga o'xshatish */
+    border: 1px solid black;
+    padding: 5px 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #e0e0e0;
+}
+
+/* Agar .section-title-narrow oddiy paragraf emas, list bo'lsa */
+.checkmark-list.section-title-narrow li {
+    padding-left: 0;
+    position: static;
+    border: none;
+    margin-bottom: 0;
+}
+.checkmark-list.section-title-narrow {
+    text-align: left; /* Ichidagi matnni chapga tekislash */
+}
+.checkmark-list.section-title-narrow .checkmark,
+.checkmark-list.section-title-narrow .bullet {
+    position: static;
+    margin-right: 5px;
+}
+
+/* Oxirgi rasmning o'rtasidagi kontent uchun */
+.main-wrapper > .image-section > .block {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+    </style>
+</head>
+<body>
+
+       <div class="orqaga">
+        <h3>
+            <a href="../grammatika.html" style="color: white; position: absolute; top: 0px; left: 0px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#3333338e; width: 100%;">Orqaga</a>
+        </h3>
+        </div>
+
+
+    <div class="main-wrapper">
+
+        <!-- 1-rasm kontenti (Kesimga oid) -->
+        <div class="image-section page-border">
+            <img src="https://i.ibb.co/C0b8R3Y/4.jpg" alt="Grammar Page 4" class="hidden-image">
+
+            <div class="column-container">
+                <div class="left-column content-column">
+                    <div class="block">
+                        <p class="section-title-narrow">KESIM</p>
+                        <ul class="checkmark-list">
+                            <li><span class="checkmark">&#10004;</span>Kesim ifodalanishiga ko'ra fe'l kesim va ot kesimga ajratiladi.</li>
+                            <li><span class="checkmark">&#10004;</span>Fe'l kesim so'l fe'l va ba'zan ravishdosh bilan ifodalanadi:</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 1. Hasan bilan g'azab ikki qanot bo'lib harakatga kelsa, loza va chiroyli hayotlarni xtira va kuduratlili qilib yuboradi.</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 2. Ishning boshi - boshlanguncha. Eslatma - gunucha ravishdoshgina kesim bo'lib kelishi mumkin.</li>
+                            <li><span class="checkmark">&#10004;</span>Fe'ldan boshqa so'z turkumlari (ot, sifat, son, olmosh, ravish, taqlid so'z) bilan, shuningdek, fe'lning harakat nomi va sifatdosh shakli bilan ifodalangan kesim ot kesim deyiladi:</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 1) ot bilan: Axloqi zamimalarning eng zarari hissiyotdir. (A. Avloniy);</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 2) sifat bilan: Usti yaltiroq, ichi qaltiroq. (Maqol);</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 3) son bilan: Ikki o'n besh – bir o'ttiz. (Maqol);</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 4) olmosh bilan: O'zim har joydaman, ko'nglim sandadur.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right-column content-column">
+                    <div class="block">
+                        <p>Kesim gapning markazi bo'lib u tasdiq-inkor, zamon, mayl, shaxs-son ma'nolarini ifodalab keladi, hukmi ifodalaydi va gapning boshqa bo'laklarini o'z atrofida birlashtiradi.</p>
+                        <p>Gapda ega ham ikkinchi darajali bo'laklar ham bevosita va bilvosita kesimga bog'lanadi.</p>
+                        <p>Kesim nima qildi?, nima bo'ldi?, nima qilyapti? kabi so'roqlarga javob bo'ladi.</p>
+                        <ul class="checkmark-list section-title-narrow">
+                            <li>KESIM</li>
+                            <li><span class="bullet">&#9679;</span> (Qo'shiq);</li>
+                            <li><span class="bullet">&#9679;</span> 5) ravish bilan: Savobning eshigi ko'p. (Maqol);</li>
+                            <li><span class="bullet">&#9679;</span> 6) modal so'z bilan: Ish bor, vaqt yo'q.</li>
+                            <li><span class="bullet">&#9679;</span> 7) harakat nomi bilan: Burchimiz – a'lo o'qish;</li>
+                            <li><span class="bullet">&#9679;</span> 8) sifatdosh bilan: Yigit kishining uyalgami – o'lgani; (Maqol);</li>
+                            <li><span class="bullet">&#9679;</span> 9) taqlid so'z bilan: Ko'chada odam g'ij-g'ij;</li>
+                            <li><span class="bullet">&#9679;</span> 10) undov so'z bilan: Endi uning holiga voy.</li>
+                            <li><span class="checkmark">&#10004;</span>Fe'l kesim ish-harakatni, ot kesim predmetning turi yoki belgisini ifodalaydi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2-rasm kontenti (Kesim davomi) -->
+        <div class="image-section page-border">
+            <img src="https://i.ibb.co/JnHwH6X/5.jpg" alt="Grammar Page 5" class="hidden-image">
+
+            <div class="column-container">
+                <div class="left-column content-column">
+                    <div class="block">
+                        <ul class="checkmark-list section-title-narrow">
+                            <li>Kesim (davomi)</li>
+                            <li><span class="checkmark">&#10004;</span>Kesimlar tuzilishiga ko'ra ikki xil bo'ladi: sodda kesim va murakkab kesim.</li>
+                            <li>Bir so'z bilan ifodalangan kesim sodda kesimdir: Paxta va tilladan yurt bezanadi.</li>
+                            <li>Rost gapir. Haqiqat achchiq.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right-column content-column">
+                    <div class="block">
+                        <p>Kesimning ma'nolari va shakllari.<br> Kesim har bir kesimlik ma'nosi alohida-alohida ifodalanishi mumkin. <br>Masalan, yozmasay-dim, yoz – ma (tasdiq-inkor) – say (mayl) – di (zamon) – m (shaxs-son).<br> Bitta kesimlik shakli bir necha kesimlik ma'nolarini ifodalaydi. <br>Masalan, keldi: Kel – di (o'tgan zamon, III shaxs, tasdiq, aniqlik mayli) yoki o'quvchiman: o'quvchi – man (I shaxs, hozirgi zamon, tasdiq, aniqlik mayli).<br> Bazan kesimlik ma'nolari nol shakl orqali ifodalanadi. <br>Masalan: Kel / (kelasi zamon, II shaxs, tasdiq-buyruq mayli) yoki Men o'quvchi (I shaxs, hozirgi zamon, tasdiq, aniqlik).<br> Kesim qaysi turkum so'zlar bilan ifodalanishiga ko'ra ikki xil (fe'l kesim, ot kesim), tuzilishiga ko'ra ikki xil (sodda kesim va murakkab kesim) bo'ladi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3-rasm kontenti (Kesim davomi) -->
+        <div class="image-section page-border">
+            <img src="https://i.ibb.co/Xz9tH45/6.jpg" alt="Grammar Page 6" class="hidden-image">
+
+            <div class="column-container">
+                <div class="left-column content-column">
+                    <div class="block">
+                        <ul class="checkmark-list section-title-narrow">
+                            <li>Kesim (davomi)</li>
+                            <li><span class="checkmark">&#10004;</span>Bir so'zdan ortiq so'zdan iborat kesim murakkab kesim deyiladi:</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 1. O'zbekiston – kelajagi buyuk davlat. 2. Sadafdan inju, ilondan zahar hosil bo'ldig'u kabi rostlikdan foyda, xiyonatdan zarar hosil bo'lur.</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 3. To'y – bahor kelganda. 4. Hamma gap – mening yo'qligimda.</li>
+                            <li><span class="checkmark">&#10004;</span>Yordamchi so'zlar (ko'makchi fe'l, bog'lama, nisbiy so'z va b.) ham murakkab kesimni shakllantiradi.</li>
+                            <li>#Online_dars</li>
+                            <li>#Juda kerakli</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right-column content-column">
+                    <div class="block">
+                        <ul class="checkmark-list section-title-narrow">
+                            <li>Kesim (davomi)</li>
+                            <li><span class="checkmark">&#10004;</span>Bir so'zdan ortiq so'zdan iborat kesim murakkab kesim deyiladi:</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 1. O'zbekiston – kelajagi buyuk davlat. 2. Sadafdan inju, ilondan zahar hosil bo'ldig'u kabi rostlikdan foyda, xiyonatdan zarar hosil bo'lur.</li>
+                            <li><span class="checkmark">&#10004;</span><span class="bullet">&#9679;</span> 3. To'y – bahor kelganda. 4. Hamma gap – mening yo'qligimda.</li>
+                            <li><span class="checkmark">&#10004;</span>Yordamchi so'zlar (ko'makchi fe'l, bog'lama, nisbiy so'z va b.) ham murakkab kesimni shakllantiradi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4-rasm kontenti (Murakkab ot-kesim) -->
+        <div class="image-section page-border">
+            <img src="https://i.ibb.co/v43QJk0/7.jpg" alt="Grammar Page 7" class="hidden-image">
+
+            <div class="block">
+                <p class="section-title-narrow">&#9679; MURAKKAB OT-KESIMNING IFODALANISHI: &#9679;</p>
+                <ul class="bullet-list">
+                    <li><span class="bullet">&#9679;</span> I. Ot-kesim + edi, ekan, emish, erur, emas bog'lamalari yordamida.</li>
+                    <li><span class="bullet">&#9679;</span> <span class="bullet-alpha">&#9428;</span> O'quvchi ekan. Ahvoli yaxshi ekan.</li>
+                    <li><span class="bullet">&#9679;</span> II. Ot-kesim + bo'lmoq, hisoblanmoq, sanalmoq.</li>
+                    <li><span class="bullet">&#9679;</span> <span class="bullet-alpha">&#9428;</span> U talaba hisoblanadi. U a'lochi sanaladi.</li>
+                    <li><span class="bullet">&#9679;</span> III. Harakat nomi + kerak, lozim, darkor, zarur, shart.</li>
+                    <li><span class="bullet">&#9679;</span> <span class="bullet-alpha">&#9428;</span> Bu masalani yechish kerak. Mehmonlarni kutib olish zarur.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -60,7 +60,10 @@ body.dark .nav-links a{
 
 .nav-links a:hover{
     color: #0a84ff;
+    transition: 0.3s;
 }
+
+
 
 .btn-login{
     background: #0a84ff;
@@ -201,4 +204,106 @@ body.dark .nav-links a{
     section.hero div.left h1 {
         font-size: 28px;
     }
+}
+
+
+
+
+/* --------------------------------------- */
+
+/* Dropdown konteyneri */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Ochildigan ro'yxatning uslubi (dastlab yashirin bo'ladi) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #383E42;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+
+/* Ro'yxat ichidagi linklar */
+.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+/* Sichqoncha ustiga kelganda rang o'zgarishi */
+.dropdown-content li a:hover {
+    background-color: #444;
+}
+
+/* Sichqoncha "Bilim yo'li" ustiga kelganda ro'yxatni ko'rsatish */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.kirish-text {
+    width: 650px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.kirish-button {
+    display: flex;
+    flex-direction:row;
+    margin-top: 45px;
+    gap: 25px;
+}
+
+.kirish-button button {
+    background-color:rgba(76, 187, 238, 0.075);
+    color:#2d3544;
+    border: none;
+}
+
+.kirish-button button:hover {
+    transition-duration: 0.4s;
+    box-shadow: 1px 1px 4px 4px #2d354452;
+
+}
+
+.text-button {
+    border-radius: 1.5rex;
+}
+
+.text-button:hover {
+    transition-duration: 0.4s;
+    box-shadow: 1px 1px 4px 4px #2d354452;
+
+}
+
+.kirish-img {
+    display: flex; 
+    justify-content: space-between;
+    margin-left: 500px;
+}
+
+.kirish-img img {
+    height: 600px;
+    margin-top: 0;
+}
+
+.mavzu {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    color: #b48395;
+    font-weight: 700;
+    background-color:#444;
 }

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adabiyotlar</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+           .asarlar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .asar-card {
+        background-color: #383e42; /* Antratsit rangi */
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        border-left: 5px solid #b48395; /* Dusty rose chizig'i */
+        cursor: pointer;
+    }
+
+    .asar-card:hover {
+        box-shadow: 5px 4px 5px 4px #dcaeae;
+        transition-duration: 0.5s;
+        transform: translateY(-10px);
+    }
+
+    .asar-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.2rem;
+        color: #dcaeae; /* Ochroq pushti */
+    }
+
+    .asar-card p {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .status-badge {
+        display: inline-block;
+        margin-top: 15px;
+        font-size: 0.7rem;
+        background: #b48395;
+        padding: 3px 10px;
+        border-radius: 10px;
+    }
+
+
+    a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #f4f4f4;
+}
+
+a:hover {
+    text-decoration: none; 
+    color: darkred; 
+}
+
+.orqaga {
+    color:aqua;
+}
+    </style>
+</head>
+<body>
+     <!-- <nav class="navbar">
+        <div class="logo">Sarafroz</div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Bosh sahifa</a></li>
+            <li><a href="./courses/courses.html">Kurslar</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Bilim yo'li ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="./grammatika.html">Grammatika</a></li>
+                    <li><a href="#">Essay</a></li>
+                    <li><a href="./asarlar.html">Asarlar</a></li>
+                    <li><a href="#">G'azallar</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Namunaviy testlar</a></li>
+            <li><a href="about.html">Biz haqimizda</a></li>
+        </ul>
+        <a class="btn-outline" href="./login/login.html">Kirish</a>
+    </nav> -->
+
+    <div>
+        <div class="orqaga">
+        <h3>
+            <a href="./index.html" style="color: rgb(255, 255, 255); position: absolute; top: 10px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 20px;">Orqaga</a>
+        </h3>
+        </div>
+        <h1 style="background-color: #383e42e6; color: azure; text-align:right; padding-right: 200px;">Asarlar</h1>
+    </div>
+<!---------------------- Asarlar -------------------- -->
+    <div class="asarlar-grid">
+    <!-- Birinchi asar -->
+    <div class="asar-card">
+        <h3>Zarbulmasal</h3>
+        <p>Gulxaniy</p>
+        <div class="status-badge">
+            <a href="https://inlibrary.uz/index.php/science-research/article/view/102582">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <!-- Ikkinchi asar -->
+    <div class="asar-card">
+        <h3>O`tkan kunlar</h3>
+        <p>Abdulla Qodiriy</p>
+        <div class="status-badge">
+            <a href="https://arm.navoiy-uni.uz/wp-content/uploads/2019/04/utgan_kunlar_ziyouz_com.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+    
+        <div class="asar-card">
+        <h3>Mehrobdan chayon</h3>
+        <p>Abdulla Qodiriy</p>
+        <div class="status-badge">
+            <a href="https://zakm.uz/media/books/Abdulla_Qodiriy._Mehrobdan_chayon.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+        <div class="asar-card">
+        <h3>Kecha va kunduz</h3>
+        <p>Abdulhamid Cho'lpon</p>
+        <div class="status-badge">
+            <a href="http://rasul.template.uz/sites/default/files/cholpon-kecha-va-kunduz.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+        <div class="asar-card">
+        <h3>Tushda kechgan umrlar</h3>
+        <p>O'tkir Hoshimov</p>
+        <div class="status-badge">
+            <a href="https://www.sever.be/files/BADIIY%20KITOBLAR/Tushda%20kechgan%20umrlar.%20Utkir%20Hoshimov.%20Roman.Toshkent%202019..pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+        <div class="asar-card">
+        <h3>Nur borki soya bor</h3>
+        <p>O'tkir Hoshimov</p>
+        <div class="status-badge">
+            <a href="https://kitobsevar.uz/kxpv/xrpt_z83vnd00yr1mzdg5f17x72stsdtpah4zevkszjsm3h1pk8jrxget8xco2x7251p9k3rab0n4hej.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Ikki eshik orasi</h3>
+        <p>O'tkir Hoshimov</p>
+        <div class="status-badge">
+            <a href="https://ipkmvd.uz/media/pdf/kitoblar/Ikki_eshik_orasi_Otkir_Hoshimov_Xo9QkWN.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Qiyomat</h3>
+        <p>Chingiz Aytmatov</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/jahon_nasri/Chingiz%20Aytmatov.%20Qiyomat%20(roman).pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Asrga tatigulik kun</h3>
+        <p>Chingiz Aytmatov</p>
+        <div class="status-badge">
+            <a href="https://uznel.natlib.uz:444/FN/dl_image/uload/userfiles/files/57_%20Asrga%20tatigulik%20kun.PDF" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Me'mor</h3>
+        <p>Mirmuhsin</p>
+        <div class="status-badge">
+            <a href="https://kutubxonachi.uz/documents/asar/adabiyot/uzbek/pdf/mirmuhsin/me-mor/#gsc.tab=0" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Xo'jand Qal'asi</h3>
+        <p>Mirmuhsin</p>
+        <div class="status-badge">
+            <a href="https://kutubxona.samduuf.uz/download/456" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Yulduzli tunlar</h3>
+        <p>Pirimqul Qodirov</p>
+        <div class="status-badge">
+            <a href="http://arm.navoiy-uni.uz/wp-content/uploads/2019/04/yulduzli_tunlar_ziyouz_com.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Avlodlar Dovoni</h3>
+        <p>Pirimqul Qodirov</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/uzbek_nasri/Pirimqul%20Qodirov.%20Avlodlar%20dovoni%20(roman).pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Ko'hna dunyo</h3>
+        <p>Odil Yoqubov</p>
+        <div class="status-badge">
+            <a href="https://ru.scribd.com/document/622304196/Odil-Yoqubov-Kohna-dunyo">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Ulug'bek Xazinasi</h3>
+        <p>Odil Yoqubov</p>
+        <div class="status-badge">
+            <a href="https://mykitob.uz/badiiy-kitoblar/odil-yoqubov-ulugbek-xazinasi/" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Diyonat</h3>
+        <p>Odil Yoqubov</p>
+        <div class="status-badge">
+            <a href="https://ziyouz.uz/ozbek-nasri/odil-yoqubov/odil-yoqubov-diyonat-roman/" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Oltin Zanglamas</h3>
+        <p>Shuhrat</p>
+        <div class="status-badge">
+            <a href="https://ru.scribd.com/document/784851001/Shuhrat-Oltin-zanglamas" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Jimjitlik</h3>
+        <p>Said Ahmad</p>
+        <div class="status-badge">
+            <a href="https://qr.natlib.uz/file/read/05db0a14-f7d7-47bc-9ae8-6f53543ecc01.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Ufq</h3>
+        <p>Said Ahmad</p>
+        <div class="status-badge">
+            <a href="https://uznel.natlib.uz:444/FN/dl_image/uload/userfiles/files/31_%20Ufq.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Lolazor</h3>
+        <p>Murod Muhammad Do'st</p>
+        <div class="status-badge">
+            <a href="https://kh-davron.uz/kutubxona/uzbek/mashhura-sheraliyeva-murod-muhammad-dostning-lolazor-romani-haqida.html" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Chinor</h3>
+        <p>Asqad Muxtor</p>
+        <div class="status-badge">
+            <a href="https://ru.scribd.com/document/742397235/Asqad-Muxtor-chinor" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Otamdan qolgan dalalar</h3>
+        <p>Tog'ay Murod</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/uzbek_nasri/Tog'ay%20Murod.%20Otamdan%20qolgan%20dalalar%20(roman).pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Jaziramadagi odamlar</h3>
+        <p>Luqmon Bo'rixon</p>
+        <div class="status-badge">
+            <a href="https://uznel.natlib.uz:444/FN/dl_image/uload/userfiles/files/2020-61-A-76_%D0%96%D0%B0%D0%B7%D0%B8%D1%80%D0%B0%D0%BC%D0%B0%D0%B4%D0%B0%D0%B3%D0%B8%20%D0%BE%D0%B4%D0%B0%D0%BC%D0%BB%D0%B0%D1%80%20%20%D1%80%D0%BE%D0%BC%D0%B0%D0%BD.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Abulfayzxon</h3>
+        <p>Abdurauf Fitrat</p>
+        <div class="status-badge">
+            <a href="https://library.ziyonet.uz/book/102727" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Sohibqiron</h3>
+        <p>Abdulla Oripov</p>
+        <div class="status-badge">
+            <a href="https://zakm.uz/media/books/M.Brion_Menkim_Sohibqiron_-_Jahongir_Temur.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Temir xotin</h3>
+        <p>Sharof Boshbekov</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/uzbek_dramaturgiyasi/Sharof%20Boshbekov.%20Temir%20xotin%20(komediya).pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Dunyoning ishlari</h3>
+        <p>O'tkir Hoshimov</p>
+        <div class="status-badge">
+            <a href="https://zakm.uz/media/books/O._Hoshimov_Dunyoning_ishlari.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Sarvqomat dilbarim</h3>
+        <p>Chingiz Aytmatov</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/jahon_nasri/Chingiz%20Aytmatov.%20Sarvqomat%20dilbarim%20(qissa).pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Oq kema</h3>
+        <p>Chingiz Aytmatov</p>
+        <div class="status-badge">
+            <a href="https://e-library.sammu.uz/uploads/books/Badiiy%20adabiyotlar/Oq%20kema-%20Chingiz%20Aytmatov-.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    
+    <div class="asar-card">
+        <h3>Jayhun ustida bulutlar</h3>
+        <p>Mirkarim Osim</p>
+        <div class="status-badge">
+            <a href="https://pubhtml5.com/qqzoh/ddmp/Mirkarim_Osim._Jayhun_ustida_bulutlar_%28qissa%29/" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    
+    <div class="asar-card">
+        <h3>Molxona</h3>
+        <p>Jorj Oruell</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/bolalar_kutubxonasi/Jorj%20Oruell.%20Hayvonlar%20xo'jaligi%20haqida%20g'aroyib%20qissa.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    <div class="asar-card">
+        <h3>Yulduzlar mangu yonadi</h3>
+        <p>Tog'ay Murod</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/uzbek_nasri/Tog'ay%20Murod.%20Yulduzlar%20mangu%20yonadi%20(qissa).pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+    
+    <div class="asar-card">
+        <h3>Otoyining tug'ilgan yili</h3>
+        <p>Erkin A'zam</p>
+        <div class="status-badge">
+            <a href="https://www.google.com/search?q=otoyining+tug%27ilgan+yili&oq=otoyi&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyCQgAEEUYORiABDIHCAEQABiABDIMCAIQABgUGIcCGIAEMgwIAxAAGBQYhwIYgAQyCwgEEAAYChgLGIAEMgsIBRAAGAoYCxiABDILCAYQABgKGAsYgAQyCwgHEAAYChgLGIAEMgsICBAAGAoYCxiABDILCAkQABgKGAsYgATSAQg1MzY1ajBqNKgCALACAA&sourceid=chrome&ie=UTF-8" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+
+    <div class="asar-card">
+        <h3>“Qorako'z majnun”, “Qoplon”, “Sobiq”</h3>
+        <p>Said Ahmad</p>
+        <div class="status-badge">
+            <a href="https://tafakkur.net/hikoyalar/said-ahmad?s=kop-oqilgan" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+    
+    <div class="asar-card">
+        <h3>“Asror bobo”, “Ming bir jon”, “O'g'ri”, “Bemor” “O'jar”, “San'atkor”,“Adabiyot muallimi”</h3>
+        <p>Abdulla Qahhor</p>
+        <div class="status-badge">
+            <a href="https://www.google.com/search?q=%E2%80%9CAsror+bobo%E2%80%9D%2C+%E2%80%9CMing+bir+jon%E2%80%9D%2C+%E2%80%9CO%27g%27ri%E2%80%9D%2C+%E2%80%9CBemor%E2%80%9D+%E2%80%9CO%27jar%E2%80%9D%2C+%E2%80%9CSan%27atkor%E2%80%9D%2C%E2%80%9CAdabiyot+muallimi%E2%80%9D&oq=%E2%80%9CAsror+bobo%E2%80%9D%2C+%E2%80%9CMing+bir+jon%E2%80%9D%2C+%E2%80%9CO%27g%27ri%E2%80%9D%2C+%E2%80%9CBemor%E2%80%9D+%E2%80%9CO%27jar%E2%80%9D%2C+%E2%80%9CSan%27atkor%E2%80%9D%2C%E2%80%9CAdabiyot+muallimi%E2%80%9D&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzYwNWowajSoAgCwAgA&sourceid=chrome&ie=UTF-8" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+   
+    <div class="asar-card">
+        <h3>O'zbeklar</h3>
+        <p>Shukur Xolmirzayev</p>
+        <div class="status-badge">
+            <a href="https://tafakkur.net/ozbeklar/shukur-xolmirzayev.uz" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+   
+    <div class="asar-card">
+        <h3>Ot egasi</h3>
+        <p>Shukur Xolmirzayev</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/portal-haqida/xarita/uzbek-nasri/shukur-xolmirzayev-1940-2005/shukur-xolmirzayev-ot-egasi-hikoya" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+  
+    <div class="asar-card">
+        <h3>Hayotga muhabbat</h3>
+        <p>Jek London</p>
+        <div class="status-badge">
+            <a href="https://uzsmart.ru/kutubxona/asarlar/1536-hayotga-muhabbat-hikoya-jek-london.html" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+           
+    <div class="asar-card">
+        <h3>Hellados</h3>
+        <p>Nodar Dumbadze</p>
+        <div class="status-badge">
+            <a href="https://tafakkur.net/hellados/nodar-dumbadze.uz" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+           
+    <div class="asar-card">
+        <h3>Garov</h3>
+        <p>Anton Chexov</p>
+        <div class="status-badge">
+            <a href="https://ru.scribd.com/document/843386070/Garov-Anton-Chexov" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+           
+    <div class="asar-card">
+        <h3>Ruhlar isyoni</h3>
+        <p>Erkin Vohidov</p>
+        <div class="status-badge">
+            <a href="https://n.ziyouz.com/books/uzbek_zamonaviy_sheriyati/Erkin%20Vohidov.%20Ruhlar%20isyoni.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

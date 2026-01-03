@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatika</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+   <style>
+           .asarlar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .asar-card {
+        background-color: #f0f2f7; /* Antratsit rangi */
+        color: brown;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px cornflowerblue;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        border-left: 5px solid #b48395; /* Dusty rose chizig'i */
+        cursor: pointer;
+    }
+
+    .asar-card:hover {
+        box-shadow: 5px 4px 5px 4px grey;
+        transition-duration: 0.5s;
+        transform: translateY(-10px);
+    }
+
+    .asar-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.2rem;
+        color:cornflowerblue; /* Ochroq pushti */
+    }
+
+    .asar-card p {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .status-badge1 {
+        display: inline-block;
+        margin-top: 15px;
+        font-size: 0.7rem;
+        background: di;
+        padding: 3px 10px;
+        border-radius: 10px;
+    }
+
+
+    a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #f4f4f4;
+}
+
+a:hover {
+    text-decoration: none; 
+    color: darkred; 
+}
+
+.orqaga h3 {
+    color: #383e42;
+    position: absolute;
+    top: 6px;
+    margin-left: 25px;
+}
+
+.orqaga h3:hover {
+    color: #b48395;
+}
+
+    </style>
+</head>
+<body>
+
+        <div class="orqaga">
+        <h3>
+            <a href="./index.html">Orqaga</a>
+        </h3>
+        </div>
+
+<div>
+    <p class="mavzu">Mavzular</p>
+</div>
+<div class="mavzu">
+    <div class="asar-card">
+        <h3>Fe'l</h3>
+        <div class="status-badge1">
+            <a href="./grammatik_mavzular/fel.html">O'rganishni boshlash</a>
+        </div>
+    </div>
+
+
+    <div class="asar-card">
+        <h3>Gap bo'laklari</h3>
+        <div class="status-badge1">
+            <a href="./grammatik_mavzular/gap_bo'laklari.html">O'rganishni boshlash</a>
+        </div>
+    </div>
+
+
+    <div class="asar-card">
+        <h3>Kesim</h3>
+        <div class="status-badge1">
+            <a href="./grammatik_mavzular/kesim.html">O'rganishni boshlash</a>
+        </div>
+    </div>
+
+    
+    <div class="asar-card">
+        <h3>Ergashgan qo'shma gaplar</h3>
+        <div class="status-badge1">
+            <a href="./grammatik_mavzular/ergashgan_gap.html">O'rganishni boshlash</a>
+        </div>
+    </div>
+</div>
+    
+
+</body>
+</html>

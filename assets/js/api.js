@@ -1,7 +1,7 @@
 // Backend API'ga ulanish uchun asosiy manzil
-// export const BASE_URL = 'http://localhost:5000/api';
+export const BASE_URL = 'http://localhost:10000/api';
 // 🔥 YANGI: Render'dan olingan URL manzilni kiriting
-const BASE_URL = 'https://edu-web-backend.onrender.com/api';
+// const BASE_URL = 'https://edu-web-backend.onrender.com/api';
 
 /**
  * Umumiy API so'rov funksiyasi (qulaylik uchun)

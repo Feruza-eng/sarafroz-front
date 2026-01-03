@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarafroz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" (https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap") rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.about-header .subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 70px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e67e22; /* Sarafroz - Olov rang yorug'lik ramzi */
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Sarafroz nomiga mos "Nurlanish" effekti */
+.light-effect {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(230, 126, 34, 0.4) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.feature-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #2c3e50, #e67e22);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Mobil moslashuvchanlik */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-header h1 {
+        font-size: 1.8rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+         <nav class="navbar">
+        <div class="logo">Sarafroz</div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Bosh sahifa</a></li>
+            <li><a href="./courses/courses.html">Kurslar</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Bilim yo'li ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="./grammatika.html">Grammatika</a></li>
+                    <li><a href="#">Essay</a></li>
+                    <li><a href="./asarlar.html">Asarlar</a></li>
+                    <li><a href="#">G'azallar</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Namunaviy testlar</a></li>
+            <li><a href="about.html">Biz haqimizda</a></li>
+        </ul>
+        <a class="btn-outline" href="./login/login.html">Kirish</a>
+    </nav>
+
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-header">
+            <h1>Sarafroz — Bilim Cho‘qqisini Yorituvchi Yo‘lboshchi!</h1>
+            <p class="subtitle">O'zbek tilini mukammal egallash va yuksak natijalarga erishish vaqti keldi.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Biz haqimizda</h2>
+                <p><strong>"Sarafroz"</strong> nomi shunchaki brend emas, u sizning o‘zbek tili olamidagi ishonchli yo‘lboshchingizdir. Fors-tojik tilidan olingan <em>"Sar"</em> (cho‘qqi, bosh) va <em>"Afroz"</em> (nur taratuvchi) so‘zlarining uyg‘unligi bizning asosiy maqsadimizni ifodalaydi: biz sizning bilim yo‘lingizni yoritish va intellektual salohiyatingizni yuksak cho‘qqilarga olib chiqishdir.</p>
+                <p>Sarafroz platformasi o‘zbek tili bo‘yicha milliy sertifikat imtihonlariga tayyorlanayotgan har bir foydalanuvchi uchun professional ko‘makchidir.</p>
+            </div>
+            <div class="about-image">
+                <div class="light-effect"></div>
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" (https://images.unsplash.com/photo-1524178232363-1fb2b075b6\55?auto=format&fit=crop&w=500&q=80") alt="Education">
+            </div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">📚</div>
+                <h3>Mukammal dastur</h3>
+                <p>Davlat test markazi standartlariga to‘liq mos keladigan o‘quv rejalari.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💡</div>
+                <h3>Zamonaviy yondashuv</h3>
+                <p>Interaktiv va qiziqarli metodika yordamida oson o'rganish.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📝</div>
+                <h3>Amaliy Sinovlar</h3>
+                <p>Maxsus ishlab chiqilgan namunaviy testlar orqali tajriba orttirish.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎓</div>
+                <h3>Mutaxassislar ko`magi</h3>
+                <p>Tajribali metodistlar tomonidan tayyorlangan materiallar.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Nima uchun aynan Sarafroz?</h3>
+            <p>Biz bilan siz nafaqat kerakli sertifikatni qo‘lga kiritasiz, balki o‘zbek tilining nafisligini his qilib, o‘z kelajagingiz uchun mustahkam poydevor qurasiz. Bilim cho‘qqilarini biz bilan zabt eting!</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

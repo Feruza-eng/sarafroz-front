@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatika Mavzusi</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px; /* Rasmdagi mayda shriftga yaqinroq */
+}
+
+.main-wrapper {
+    max-width: 1000px; /* Umumiy kenglik, rasmlarga moslash uchun */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.image-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+/* Har bir rasm uchun qizil chegara, faqat ko'rinish uchun */
+.page-border {
+    border: 1px solid #ff0000;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.hidden-image {
+    display: none; /* Rasmlarning o'zini yashirish, chunki matni HTMLda */
+}
+
+/* Sarlavhalar */
+h1, h2, h3, h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000;
+}
+h1 { font-size: 1.5em; text-align: center; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.1em; }
+h4 { font-size: 1em; }
+
+p {
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-bottom: 10px;
+    padding-left: 0; /* Ichki list uchun */
+}
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+li {
+    margin-bottom: 5px;
+    padding-left: 10px; /* Kirish uchun */
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+/* Asosiy ustunlar tuzilishi */
+.column-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.left-column, .right-column {
+    flex: 1;
+    padding: 5px; /* Ichki padding */
+}
+.content-column {
+    border: 1px solid #ccc; /* Rasmdagi ustun chegaralariga o'xshatish */
+}
+.block {
+    margin-bottom: 15px;
+}
+
+/* Qora chegara bilan o'ralgan bloklar */
+.box-content {
+    border: 1px solid black;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* Diagramma uslubi */
+.top-title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.title-box {
+    flex-grow: 1;
+}
+.logo-box {
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #e0f0ff; /* Rasmdagi orqa fon rangiga o'xshash */
+}
+.logo-text {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.diagram-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.diagram-item {
+    margin: 5px 0;
+}
+.concept-box {
+    border: 1px solid black;
+    padding: 8px 15px;
+    background-color: #f9f9f9;
+    text-align: center;
+    min-width: 150px; /* Minimal kenglik */
+}
+.main-concept .concept-box {
+    background-color: #e6f7ff; /* Kichik o'zgarish */
+}
+
+.diagram-branch-level-1 {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Ajralish masofasi */
+    margin-top: 10px;
+}
+.diagram-branch-level-2 {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%; /* Kengroq tarqalish */
+}
+.sub-concept {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.sub-concept .concept-box {
+    background-color: #f0f8ff; /* Eng pastki daraja uchun boshqa fon */
+}
+
+
+/* Jadvallar */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 0.9em; /* Jadval matni sal kichikroq */
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.data-table th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+       <div class="orqaga">
+        <h3>
+            <a href="../grammatika.html" style="color: white; position: absolute; top: 0px; left: 0px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#3333338e; width: 100%;">Orqaga</a>
+        </h3>
+        </div>
+
+
+    <div class="main-wrapper">
+
+        <!-- 1-rasm kontenti -->
+        <div class="image-section page-border">
+            <img src="https://i.ibb.co/3pQz29q/1.jpg" alt="Grammar Page 1" class="hidden-image"> <!-- Rasmni tekshirish uchun, aslda kerak emas -->
+
+            <div class="top-title-block">
+                <div class="title-box">
+                    <h1>GAPNING ISHTIROKCHIGA KO'RA BO'LADIGAN GAP TURLARI</h1>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-item main-concept">
+                    <div class="concept-box">GAP</div>
+                </div>
+                <div class="diagram-branch-level-1">
+                    <div class="diagram-item">
+                        <div class="concept-box">EGALIK GAP</div>
+                    </div>
+                    <div class="diagram-item">
+                        <div class="concept-box">EGASIZ GAP</div>
+                    </div>
+                </div>
+                <div class="diagram-branch-level-2">
+                    <div class="diagram-item sub-concept">
+                        <div class="concept-box">Egali gap</div>
+                        <div class="concept-box">Egasi yashiringan gap</div>
+                        <div class="concept-box">Egasi umumlashtirilgan gap</div>
+                        <div class="concept-box">Egasi aniq gap</div>
+                    </div>
+                    <div class="diagram-item sub-concept">
+                        <div class="concept-box">Shaxsi umumlashmagan gap</div>
+                        <div class="concept-box">Atov gap</div>
+                        <div class="concept-box">So'z gap</div>
+                        <div class="concept-box">Egasiz gap</div> <!-- Rasmdagi takrorlanish -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="column-container">
+                <div class="left-column content-column">
+                    <div class="block">
+
+                        <p><strong>I. Egali gap.</strong> Gapda shaxs, harakat yoki hodisani ifodalovchi ega bo'lishi shart. Ega, ko'pincha fe'l bilan ifodalanadi. Egali gaplar ikki turga bo'linadi: aniq egali gaplar va noaniq egali gaplar.</p>
+                        <ol>
+                            <li><strong>Egasi aniq gap.</strong> Ega shaxs-son qo'shimchalari bilan aniq ifodalanadi. Bu gap turida shaxsning kimligi aniq bo'ladi. <br><em>Misollar: Men o'qidim. Sen kelding. U yozdi.</em></li>
+                            <li><strong>Egasi yashiringan gap.</strong> Ega shaxs-son qo'shimchalari bilan ifodalanadi, ammo gapda ega bevosita aytilmaydi. Kontekstdan tushuniladi. <br><em>Misollar: Kitob o'qidim. Maktabga bordik.</em></li>
+                            <li><strong>Egasi umumlashtirilgan gap.</strong> Ega shaxs-son qo'shimchalari bilan ifodalanadi, ammo harakat umumiy ma'no kasb etadi. Har kimga tegishli bo'ladi. <br><em>Misollar: Yetti o'lchab bir kes. Bilag'on do'stim bor.</em></li>
+                            <li><strong>Egasi noaniq gap.</strong> Ega shaxs-son qo'shimchalari bilan ifodalanadi, ammo kimligi aniq emas. Harakatning bajaruvchisi noma'lum bo'ladi. <br><em>Misollar: Unga kitob berishdi. Kecha qiziq film qo'yishdi.</em></li>
+                        </ol>
+                    </div>
+
+                    <div class="block">
+                        <p><strong>II. Egasiz gap.</strong> Gapda ega bo'lmaydi. Faqat kesim bilan ifodalanadi. Egasiz gaplar uch turga bo'linadi:</p>
+                        <ol>
+                            <li><strong>Shaxsi umumlashmagan gap.</strong> Ega yo'q, ammo harakat biror shaxsga taalluqli emas, umumiy xarakterga ega. <br><em>Misollar: Bu yerda tinch yashash kerak. Qorong'u bo'lmoqda.</em></li>
+                            <li><strong>Atov gap.</strong> Faqat ot kesim bilan ifodalanadi. Narsa, hodisa yoki shaxsning borligini ataydi. <br><em>Misollar: Tun. Qish. Baxt.</em></li>
+                            <li><strong>So'z gap.</strong> Bir so'zdan iborat, savolga javob beradi yoki buyruq, iltimosni ifodalaydi. <br><em>Misollar: Ha. Yo'q. Ket!</em></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="right-column content-column">
+                    <div class="block">
+                        <h2>HOL VA UNING IFODALANIChI</h2>
+                        <p>Hol gapda harakatning qanday, qayerda, qachon, nima sababdan sodir bo'lganligini anglatuvchi bo'lakdir. Hollar fe'l, sifat, ot, ravish, son kabi so'zlar bilan ifodalanishi mumkin. <br>Hollar besh turga bo'linadi:</p>
+                        <ol type="A">
+                            <li><strong>Kelishik holi.</strong> Otlarga kelishik qo'shimchalari qo'shilib hosil bo'ladi. <br><em>Misollar: Maktabga bordim. Uyda qoldim.</em></li>
+                            <li><strong>To'g'ridan-to'g'ri hol.</strong> Fe'llarga -[noaniq matn] qo'shimchasi qo'shilib hosil bo'ladi. <br><em>Misollar: Yozib o'qidi. Kulib gapirdi.</em></li>
+                            <li><strong>O'rin holi.</strong> Otlarga [noaniq matn] qo'shimchasi qo'shilib hosil bo'ladi. <br><em>Misollar: Toshkentda o'qidim. Qishloqda tug'ildim.</em></li>
+                            <li><strong>Harakat holi.</strong> Fe'llarga -[noaniq matn] qo'shimchasi qo'shilib hosil bo'ladi. <br><em>Misollar: Tez yugurdi. Sekin gapirdi.</em></li>
+                            <li><strong>Maqsad holi.</strong> Fe'llarga -[noaniq matn] qo'shimchasi qo'shilib hosil bo'ladi. <br><em>Misollar: O'qish uchun keldi. Yozish uchun o'tirdi.</em></li>
+                        </ol>
+                        <p>Yuqorida aytilgan hollar faqat grammatik ma'noga ega bo'ladi. Holning bir qancha shakllari bor:</p>
+
+<ol>
+                            <li><strong>To'g'ri hol.</strong> Harakatning qanday bajarilganligini bildiradi. <br><em>Misollar: Yugurib keldi. O'qib chiqdi.</em></li>
+                            <li><strong>Vositali hol.</strong> Harakatning vositasini bildiradi. <br><em>Misollar: Qalam bilan yozdi. Mashina bilan keldi.</em></li>
+                            <li><strong>Ko'makchi hol.</strong> Harakatga ko'makchi fe'llar qo'shiladi. <br><em>Misollar: Ayta boshladi. Kela oldi.</em></li>
+                        </ol>
+                        <h3>HOLLANISH VA UNING IFODALANIChI</h3>
+                        <p>Hollanish so'zning grammatik shakllarini o'zgartirish orqali uning gapdagi vazifasini belgilashdir. <br>Hollanish to'rt turga bo'linadi:</p>
+                        <ol>
+                            <li><strong>Oddiy hollanish.</strong> Otning lug'aviy shaklida, hech qanday qo'shimchasiz. Gapda ega vazifasini bajaradi. <br><em>Misollar: Bola keldi. Kitob bor.</em></li>
+                            <li><strong>Qaratqich hollanish.</strong> Otga -ning qo'shimchasi qo'shiladi. Egalik munosabatini bildiradi. <br><em>Misollar: Bolaning kitobi. Shaharning markazi.</em></li>
+                            <li><strong>Tushum hollanish.</strong> Otga -ni qo'shimchasi qo'shiladi. Harakat ob'ektini bildiradi. <br><em>Misollar: Kitobni o'qidim. Nonni yedim.</em></li>
+                            <li><strong>Jo'nalish hollanish.</strong> Otga -ga/-ka/-qa qo'shimchasi qo'shiladi. Harakat yo'nalishini bildiradi. <br><em>Misollar: Maktabga bordim. Do'stimga berdim.</em></li>
+                            <li><strong>O'rin-payt hollanish.</strong> Otga -da qo'shimchasi qo'shiladi. Harakat joyini yoki vaqtini bildiradi. <br><em>Misollar: Stolda yotibdi. Oshxonada ovqatlandik.</em></li>
+                            <li><strong>Chiqish hollanish.</strong> Otga -dan qo'shimchasi qo'shiladi. Harakat manbasini bildiradi. <br><em>Misollar: Uydan keldim. Daraxtdan olma uzdik.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2-rasm kontenti -->
+        <div class="image-section page-border">
+            <img src="https://i.ibb.co/Xz11F24/2.jpg" alt="Grammar Page 2" class="hidden-image"> <!-- Rasmni tekshirish uchun, aslda kerak emas -->
+
+            <div class="block">
+                <h2>TO'LDIRUVCHI VA UNING IFODALANIChI</h2>
+                <p>To'ldiruvchi gapda fe'l, ot yoki ravishni to'ldirib, harakatning bajaruvchisi, holati, sababi kabi ma'nolarni ifodalovchi bo'lakdir. To'ldiruvchilar ikki turga bo'linadi: aniq to'ldiruvchi va noaniq to'ldiruvchi.</p>
+                <p>Aniq to'ldiruvchi to'g'ridan-to'g'ri fe'lga bog'lanadi va ob'ektni bildiradi. <br>Noaniq to'ldiruvchi fe'lga bog'lanadi, ammo ob'ektni emas, balki boshqa ma'nolarni ifodalaydi.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Turi</th>
+                            <th>Qismi</th>
+                            <th>So'rog'i</th>
+                            <th>Shakllari</th>
+                            <th>Misollar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Tushum</td>
+                            <td>[noaniq matn]</td>
+                            <td>Kimni? Nimani?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Kitobni o'qidim.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+
+<td>Qaratqich</td>
+                            <td>[noaniq matn]</td>
+                            <td>Kimning? Nimaning?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Bolaning kitobi.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Jo'nalish</td>
+                            <td>[noaniq matn]</td>
+                            <td>Kimga? Nimaga?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Maktabga bordim.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>O'rin-payt</td>
+                            <td>[noaniq matn]</td>
+                            <td>Kimda? Nimada?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Stolda yotibdi.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Chiqish</td>
+                            <td>[noaniq matn]</td>
+                            <td>Kimdan? Nimadan?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Uydan keldim.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Vositali</td>
+                            <td>[noaniq matn]</td>
+                            <td>Nima bilan?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Qalam bilan yozdim.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Miyyor hol</td>
+                            <td>[noaniq matn]</td>
+                            <td>Qanday?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Tez yugurdi.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Daraja hol</td>
+                            <td>[noaniq matn]</td>
+                            <td>Qanchalik?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Juda tez.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <p>Gapning kesim bilan bog'lanishida turli xil vositalar yordam beradi. <br>Vositachilik esa gapning ma'nosini chuqurlashtiradi. <br>To'ldiruvchilar ikki turga bo'linadi: to'g'ri va vositali to'ldiruvchilar. <br>To'g'ri to'ldiruvchilar fe'lga bevosita bog'lanadi va ob'ektni ifodalaydi. <br>Vositali to'ldiruvchilar fe'lga bilvosita bog'lanadi va turli ma'nolarni ifodalaydi.</p>
+                <div class="box-content">
+                    <p>Gapda to'ldiruvchi vazifasini bajaradigan so'zlarga -ga, -dan, -da, -ni, -ning, bilan, uchun, to'g'risida kabi ko'makchilar va bog'lovchilar qo'shilishi mumkin. <br>Misollar: Men kitobni o'qidim. Biz maktabga bordik. U do'stdan keldi. <br>Bu yerda to'ldiruvchi turli vazifalarni bajarishi mumkin: harakatning bajaruvchisi, holati, sababi, maqsadi, natijasi va boshqa.</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>ANIQLOVCHI VA UNING IFODALANIChI</h2>
+                <p>Aniqlagich gapda ot, olmosh, sifat yoki boshqa so'zlarni to'ldirib, ularning belgisini, xususiyatini, miqdorini, tartibini yoki boshqa xususiyatlarini aniqlovchi bo'lakdir. <br>Aniqlagichlar ikki turga bo'linadi: sifatdosh aniqlagichlar va qaratgich aniqlagichlar.</p>
+                <p>Sifatdosh aniqlagichlar ot, olmosh, sifat yoki boshqa so'zlarni to'ldirib, ularning belgisini, xususiyatini, miqdorini, tartibini yoki boshqa xususiyatlarini aniqlovchi bo'lakdir. <br>Qaratgich aniqlagichlar ot, olmosh, sifat yoki boshqa so'zlarni to'ldirib, ularning belgisini, xususiyatini, miqdorini, tartibini yoki boshqa xususiyatlarini aniqlovchi bo'lakdir. <br>Aniqlagichlar otlarga -ning, -li, -siz, -chan kabi qo'shimchalar qo'shish bilan hosil bo'ladi. <br>Misollar: Yaxshi bola. Chiroyli qiz. Kitobli odam. Darsliksiz o'quvchi. <br>Bu yerda aniqlagichlar turli vazifalarni bajarishi mumkin: ob'ektning belgisini, xususiyatini, miqdorini, tartibini yoki boshqa xususiyatlarini aniqlaydi.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Aniqlash turi</th>
+                            <th>Savollari</th>
+                            <th>Shakllari</th>
+                            <th>Misollar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Sifatdosh</td>
+                            <td>Qanday? Qaysi?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Yaxshi bola.</td>
+                        </tr>
+                        <tr>
+                            <td>2. Qaratqich</td>
+                            <td>Kimning? Nimaning?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Bolaning kitobi.</td>
+                        </tr>
+                        <tr>
+                            <td>3. Miqdor</td>
+                            <td>Nechta? Qancha?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Uchta kitob.</td>
+                        </tr>
+                        <tr>
+                            <td>4. Tartib</td>
+                            <td>Nechanchi?</td>
+                            <td>[noaniq matn]</td>
+                            <td>Birinchi qator.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3-rasm kontenti -->
+        <div class="image-section page-border">
+            <img src="https://i.ibb.co/L519V3B/3.jpg" alt="Grammar Page 3" class="hidden-image"> <!-- Rasmni tekshirish uchun, aslda kerak emas -->
+
+            <div class="column-container">
+                <div class="left-column content-column">
+                    <div class="block">
+                        <h2>Sifatdoshlar (ta'riflovchi, sifatlashdoshlar, ... ga ta'riflovchi)</h2>
+                        <p>Sifatdoshlar ot, olmosh, sifat yoki boshqa so'zlarni to'ldirib, ularning belgisini, xususiyatini, miqdorini, tartibini yoki boshqa xususiyatlarini aniqlovchi bo'laklardir. <br>Sifatdoshlar ikki turga bo'linadi: sifatlashdoshlar va qaratqichdoshlar.</p>
+                        <p><strong>Qaratqichdoshlar.</strong> Fe'lning egalik kelishigi (-gan, -digan, -adigan, -gan, -adigan, -r) shaklida bo'ladi. <br>Ular fe'lning ma'nosini o'zgartiradi va shaxsning kimligini aniq ko'rsatadi. <br>Misollar: Kelgan odam. O'qigan bola. Yozgan qiz. <br>Qaratqichdoshlar otlarga -ning, -li, -siz, -chan kabi qo'shimchalar qo'shish bilan hosil bo'ladi. <br>Misollar: Toshkentlik qiz. Kitobli bola. Darsliksiz o'quvchi. <br>Qaratqichdoshlar [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn]</p>
+                        <p><strong>Ravishdoshlar.</strong> Fe'lning [noaniq matn] shaklida bo'ladi. Ular fe'lning ma'nosini o'zgartiradi va shaxsning kimligini aniq ko'rsatadi. <br>Misollar: Tez yurib ketdi. Yaxshi o'qib tugatdi. <br>Ravishdoshlar otlarga -ning, -li, -siz, -chan kabi qo'shimchalar qo'shish bilan hosil bo'ladi. <br>Misollar: Toshkentlik qiz. Kitobli bola. Darsliksiz o'quvchi. <br>Ravishdoshlar [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn]</p>
+                        <p><strong>Sifatlashdoshlar.</strong> Fe'lning [noaniq matn] shaklida bo'ladi. Ular fe'lning ma'nosini o'zgartiradi va shaxsning kimligini aniq ko'rsatadi. <br>Misollar: Chiroyli qiz. Yaxshi bola. <br>Sifatlashdoshlar otlarga -ning, -li, -siz, -chan kabi qo'shimchalar qo'shish bilan hosil bo'ladi. <br>Misollar: Toshkentlik qiz. Kitobli bola. Darsliksiz o'quvchi. <br>Sifatlashdoshlar [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn]</p>
+                    </div>
+                </div>
+
+                <div class="right-column content-column">
+                    <div class="block">
+                        <h2>Sifatlashdoshlar</h2>
+                        <p>Sifatlashdoshlar ot, olmosh, sifat yoki boshqa so'zlarni to'ldirib, ularning belgisini, xususiyatini, miqdorini, tartibini yoki boshqa xususiyatlarini aniqlovchi bo'laklardir. <br>Sifatlashdoshlar ikki turga bo'linadi: sifatlashdoshlar va qaratqichdoshlar.</p>
+                        <p><strong>Birinchi sifatlashdosh.</strong> Fe'lning [noaniq matn] shaklida bo'ladi. <br>Ular fe'lning ma'nosini o'zgartiradi va shaxsning kimligini aniq ko'rsatadi. <br>Misollar: [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] <br>Sifatlashdoshlar [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn] [noaniq matn]</p>
+                        <ol>
+                            <li>[noaniq matn]</li>
+                            <li>[noaniq matn]</li>
+                            <li>[noaniq matn]</li>
+                            <li>[noaniq matn]</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
