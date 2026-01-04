@@ -1,11 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G'azallar</title>
+    <title>G'azal Tahlili</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --white: #ffffff;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --border-color: #dfe6e9;
+            --accent-gray: #f9f9f9;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigatsiya */
+        .top-nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-orqaga {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .btn-orqaga:hover { color: #000; }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--text-dark);
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* G'azal qismi */
+        .ghazal-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .bayt {
+            margin-bottom: 25px;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #000;
+        }
+
+        .bayt-number {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            font-style: normal;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Lug'at qismi */
+        .lugat-box {
+            background: var(--accent-gray);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--text-dark);
+            margin: 40px 0;
+        }
+
+        .lugat-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Test qismi */
+        .test-section {
+            margin-top: 60px;
+        }
+
+        .test-card {
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .test-card:hover {
+            border-color: var(--text-gray);
+            background-color: #fcfcfc;
+        }
+
+        .test-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+
+        .option {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: var(--accent-gray);
+            border-color: var(--border-color);
+        }
+
+        .option span {
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--text-gray);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-gray);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            .bayt { font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis explicabo quia dicta laborum impedit maxime dolorum porro sit amet commodi.</p>
+
+    <div class="top-nav">
+        <a href="./index.html" class="btn-orqaga">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            ORQAGA QAYTISH
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>GʻAZAL TAHLILI</h1>
+
+        <div class="ghazal-section">
+            <div class="bayt">
+                <span class="bayt-number">1-bayt</span>
+                Lolaning g‘unchasidek ko‘nglum o‘luptur to‘la qon,<br>
+                Vahki, el g‘ofilu kuydurdi meni dog‘i nihon.
+            </div>
+
+            <div class="bayt">
+                <span class="bayt-number">2-bayt</span>
+                Zahri hajrich kalidermenki, qilay ishqin tark,<br>
+                Aytqandek kishi muhlik maraz ichra hazayon.
+            </div>
+
+            <div class="bayt">
+                <span class="bayt-number">3-bayt</span>
+                Ro‘zgorimki qora bo‘ldi, erur ishq asari,<br>
+                Qayda o‘t tushsa, qoralig‘i qolur yerdan nishon.
+            </div>
+
+            <div class="bayt">
+                <span class="bayt-number">4-bayt</span>
+                Ishqing o‘tinki yoshurdum, el aro yoydi raqib,<br>
+                Kim isitmani nihon tutsa qilur marga ayon.
+            </div>
+
+            <div class="bayt">
+                <span class="bayt-number">5-bayt</span>
+                Xating ichinda labingning ikki xoli ne ajab,<br>
+                Ikki durnuqta yozilur esa xat ichinda jon.
+            </div>
+
+            <div class="bayt">
+                <span class="bayt-number">6-bayt</span>
+                Hajr uchun qonim ichar har sari qonlig‘ tuganim,<br>
+                Xon erur ollida, to ko‘nglumga bo‘lmish mehmon.
+            </div>
+
+            <div class="bayt">
+                <span class="bayt-number">7-bayt</span>
+                Charxdin mehrisi topqang‘a takabbur ne ajab,<br>
+                El dimog‘ig‘achu ko‘kurd o‘ti aylar nuqson.
+            </div>
+
+            <div class="bayt">
+                <span class="bayt-number">8-bayt</span>
+                Xalq ta’netsa, Navoiy egilib nola qilur,<br>
+                Igri yanglig‘ki, qilur yel asari birla fig‘on.
+            </div>
+        </div>
+
+        <div class="lugat-box">
+            <span class="lugat-title">Lug‘at:</span>
+            • <b>Muhlik</b> – halok qiluvchi<br>
+            • <b>Hazayon</b> – behuda so‘z aytish
+        </div>
+
+        <div class="test-section">
+            <!-- Test 1 -->
+            <div class="test-card">
+                <span class="test-title">1-Test: 2-bayt mazmuni haqidagi to‘g‘ri hukmni aniqlang.</span>
+                <div class="options">
+                    <div class="option"><span>a)</span> Ishqni tark etib, uning zahrini ichishdan forig‘ bo‘lmoqchi bo‘lgan yor timsoli berilgan.</div>
+                    <div class="option"><span>b)</span> Yorni tark etib kasallikdan xalos bo‘lmoqchi bo‘lgan yorning kechinmalari ko‘rsatilgan.</div>
+                    <div class="option"><span>c)</span> Behuda gap-so‘zlarga qaramay yor ishqidan voz kechmoqchiligi aytilgan.</div>
+                    <div class="option"><span>d)</span> Baytda yor ishqini tark qilmoqchi bo‘lgan oshiqning holati, kasal alahsirab aytgan gapiga o‘xshatilgan.</div>
+                </div>
+            </div>
+
+            <!-- Test 2 -->
+            <div class="test-card">
+                <span class="test-title">2-Test: 7-bayt (Begona bayt) haqida xato berilgan hukmni aniqlang.</span>
+                <div class="options">
+                    <div class="option"><span>a)</span> Ushbu baytda kibrga berilmaslik g‘oyasi ilgari surilgan.</div>
+                    <div class="option"><span>b)</span> Tamsil, tashbeh, tanosub she’riy san’atlaridan foydalanilgan.</div>
+                    <div class="option"><span>c)</span> Quyosh nuri va gugurt o‘ti o‘zaro tashbeh qilingan.</div>
+                    <div class="option"><span>d)</span> Dunyoda mehrisi topgan kishilarda takabburlik bo‘lishi ajablanarli hodisa.</div>
+                </div>
+            </div>
+
+            <!-- Test 3 -->
+            <div class="test-card">
+                <span class="test-title">3-Test: Quyidagi qaysi mazmun g‘azal baytlarida keltirilmagan?</span>
+                <div class="options">
+                    <div class="option"><span>a)</span> Lirik qahramonning girdibod, uyurma kabi egilib nola qilishi.</div>
+                    <div class="option"><span>b)</span> Hajr o‘ti xonlarning oldidan kelib oshiqning ko‘ngliga mehmon bo‘lishi.</div>
+                    <div class="option"><span>c)</span> Xalq ta’na etsa Navoiy egilib nola qilishi.</div>
+                    <div class="option"><span>d)</span> 4-baytda irsoli masal san’atidan ustalik bilan foydalanilgan.</div>
+                </div>
+            </div>
+
+            <!-- Test 4 -->
+            <div class="test-card">
+                <span class="test-title">4-Test: 5-baytda qanday she’riy san’atlar mavjud?</span>
+                <div class="options">
+                    <div class="option"><span>a)</span> 1, 2, 5, 8, 9</div>
+                    <div class="option"><span>b)</span> 3, 4, 5, 6, 9</div>
+                    <div class="option"><span>c)</span> 1, 3, 5, 6, 9</div>
+                    <div class="option"><span>d)</span> 2, 3, 7, 9, 10</div>
+                </div>
+            </div>
+
+            <!-- Test 5 -->
+            <div class="test-card">
+                <span class="test-title">5-Test: G‘azal matlasidagi g‘ofil, nihon so‘zlari qaysi she’riy san’atni yuzaga keltiradi?</span>
+                <div class="options">
+                    <div class="option"><span>a)</span> Tazod</div>
+
+<div class="option"><span>b)</span> Tanosub</div>
+                    <div class="option"><span>c)</span> Tashbeh</div>
+                    <div class="option"><span>d)</span> Istiora</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+         <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">© Sarafroz Platformasi uchun maxsus tayyorlandi</p>
+    </footer>
+
 </body>
 </html>

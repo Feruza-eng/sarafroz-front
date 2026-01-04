@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matnlar Bo'limi</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+            --card-border: #eeeeee;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --accent-gray: #b2bec3;
+            --hover-shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        
+        /* Navigatsiya paneli */
+        .top-nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            color: #000;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* Kartochkalar Gridi */
+        .asarlar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Asar Kartochkasi */
+        .asar-card {
+            background-color: var(--white);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .asar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px var(--hover-shadow);
+            border-color: var(--accent-gray);
+        }
+
+        /* Kategoriya (masalan: Hikoya, Roman) */
+        .category {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gray);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .asar-card h3 {
+            font-size: 1.4rem;
+            margin: 0 0 8px 0;
+            color: var(--text-main);
+            font-family: 'Georgia', serif;
+        }
+
+        .author {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .excerpt {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Tugma */
+        .read-btn {
+            margin-top: auto;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.2s;
+        }
+
+        .read-btn:hover {
+            color: #000;
+            gap: 10px;
+        }
+
+        /* Kartochka bezagi uchun kulrang chiziq */
+        .asar-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+        }
+
+        .asar-card:hover::before {
+            background-color: var(--text-main);
+        }
+
+        @media (max-width: 600px) {
+            .asarlar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <a href="./index.html" class="btn-back">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            ORQAGA QAYTISH
+        </a>
+    </div>
+
+
+
+
+<div class="container">
+    <header>
+        <h1>Hikoyalar</h1>
+    </header>
+
+    <div class="asarlar-grid">
+        
+        <!-- Kartochka 1 -->
+        <div class="asar-card">
+            <span class="category">Hikoya</span>
+            <h3>Da'vodan kechasizmi?</h3>
+            <p class="author">Aziz Nesin</p>
+            <p class="excerpt">Qahvaxonada kimdir birovni «sharaq» etib tushirib qoldi. Gap-so'z bo'linib, o'yin to'xtadi. Hamma shapaloq ovozi kelgan stol tomonga o'girildi...</p>
+            <a href="./grammatik_mavzular/matn1.html" class="read-btn">O'qishni davom ettirish &rarr;</a>
+        </div>
+
+        <!-- Kartochka 2 -->
+        <div class="asar-card">
+            <span class="category">Hikoya</span>
+            <h3>Imtihon kuni</h3>
+            <p class="author">Genri Slizar</p>
+            <p class="excerpt"> Kutilmagan tortishuvga 
+aynan nima sabab bo‘lganini u anglab yetolmadi, biroq u bugun o‘zining tug‘ilgan kuni ekanini 
+bilar va avvalo xonadonda ahillik bo‘lishini istardi...</p>
+            <a href="./grammatik_mavzular/matn2.html" class="read-btn">O'qishni davom ettirish &rarr;</a>
+        </div>
+
+        <!-- Kartochka 3 -->
+        <div class="asar-card">
+            <span class="category">Hikoya</span>
+            <h3>Noyob mikrob</h3>
+            <p class="author">Aziz Nesin</p>
+            <p class="excerpt"> Men o‘zim bu mikrobni umrimda ikkinchi marta ko‘rishim. Ilk bor Parijda mengayam 
+professorim ko‘rsatgan edi....</p>
+            <a href="./grammatik_mavzular/matn3.html" class="read-btn">O'qishni davom ettirish &rarr;</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

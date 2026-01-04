@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hikoya</title>
+    <style>
+        /* Umumiy sozlamalar */
+        body {
+            font-family: 'Georgia', serif; /* Adabiy uslub uchun */
+            background-color: #f4f4f4; /* Och kulrang fon */
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        /* Hikoya konteyneri (Oq qog'oz effekti) */
+        .story-container {
+            background-color: #ffffff;
+            max-width: 750px;
+            width: 100%;
+            padding: 60px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 2px;
+            line-height: 1.8; /* Qatorlar oralig'i */
+        }
+
+        /* Sarlavha */
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #1a1a1a;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        /* Matn elementlari */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 30px; /* Xatboshi boshi */
+        }
+
+        /* Dialoglar uchun maxsus uslub */
+        .dialog {
+            color: #2c3e50;
+            font-style: italic;
+            border-left: 3px solid #ddd;
+            padding-left: 15px;
+            margin: 20px 0;
+            text-indent: 0;
+        }
+
+        /* Muhim joylar uchun */
+        .highlight {
+            color: #555;
+            font-weight: bold;
+        }
+
+        /* Ajratuvchi */
+        .separator {
+            text-align: center;
+            margin: 40px 0;
+            color: #ccc;
+            font-size: 20px;
+        }
+
+        /* Footer (pastki qism) */
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+
+        /* Mobil qurilmalar uchun moslashtirish */
+        @media (max-width: 600px) {
+            .story-container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+        }
+
+
+
+         .top-nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px;
+            position: absolute;
+            top: 0;
+            right: 1300px;
+            z-index: 1000;
+            display: flex;
+            align-items:flex-start;
+            color: #333;
+        }
+
+        .link-orqaga {
+            color:#333;
+            text-decoration: none;
+        }
+
+        .link-orqaga:hover {
+            color: #55555598;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top-nav">
+    <a href="../hikoya.html" class="link-orqaga">
+        ← Orqaga qaytish
+    </a>
+</div>
+    <div class="story-container">
+        <h1>KUTILMAGAN TARSAKI</h1>
+
+        <p>Энди кетай деб турган эдим, хотиним:</p>
+        <div class="dialog">— Қизимиз мактабга бормаяпти, — деб қолди.</div>
+        <div class="dialog">— Нега?</div>
+        <div class="dialog">— Физкультура муаллими оқ резинкали ботинка билан шалвор олиб келмасанг, дарсга кирмайсан, дебди.</div>
+        <div class="dialog">— Ҳа, бир гап бўлар.</div>
+        <div class="dialog">— Овқатга ёғ йўқ.</div>
+
+        <p>Югуриб кўчага чиқдим. Ишдан кеч қолдим, энди бугун бормай қўя қолай дедим ўзимга ўзим. Бунинг устига тинмай жала қуйиб турибди. Илгари биз томонларга трамвай юрарди, ҳозир у ҳам йўқ. Автобусни пойласанг, ярим соатда зўрға келади. Кошкийди кутганга яраша чиқолсанг. Ҳамиша тирбанд бўлади. Таксини гапирмаган маъқул. Кўчадан машиналар ғир-ғир ўтиб турибди-ю биттасиям тўхтамайди-я. Оёқдан сув ўтиб кетди, роса ивидим. Нима қиларимни билмай гангиб турган эдим, бир ўспирин олдимга келиб:</p>
+        <div class="dialog">— Кечирасиз, тоға, — деб қолди.</div>
+        
+        <p>Соат-поат сўраса керак, деб ўйладим.</p>
+        <div class="dialog">— Кечаги ўйин нима бўлди, эшитмадингизми?</div>
+        <div class="dialog">— Тавба… — Индамай жўнаб қолдим.</div>
+
+<p>Ўша ўртадаги қаҳвахонага кирдим. Уст-бошим жиққа ҳўл, чой сўрадим. Мен урган шу одам ёнимда газета ўқиб ўтирган экан. «Аҳвол чатоқ, бу ёғи нима бўлди» деб ўзимча хаёл суриб ўтирган эдим, бу киши «юртимиз жаҳаннамга кетяпти!» деганича қўлидаги газетани ирғитиб юборди. Бу одам ҳам менга ўхшаб бир нимадан куйган бўлса керак, деб ўйладим. Икковимиз ҳасратлашсак, зора енгил тортармиз, деган мақсадда унга қараб:</p>
+        
+        <div class="dialog">— Тинчликми, бейафандим? Сўраганнинг айби йўқ, нега хафа бўляпсиз? — деб сўрадим.</div>
+        <div class="dialog">— Хафа бўлиш ҳам гапми, қоним қайнаб кетди, — деди у ҳамон тутақиб. — Мамлакат бедарвоза бўлиб қолди. Судьялар нима истаса шуни қилади. Буни қаранг, кечаги футбол ўйинида судья яна тарафкашлик қилибди.</div>
+
+        <div class="separator">***</div>
+
+        <p>Шундан кейин нима бўлганини билмайман. Ўзимни тутолмай қолдим, комиссарбей. Умримда бировни чертган инсонмасман. Биров электр тугмачасини босиб, баданимга ток юборгандек бўлиб кетди. Ўнг қўлим ўзидан-ўзи шартта кўтарилиб, шу одамнинг башарасига шапалоқ туширдим. Урганимни бўйнимга оламан. Лекин мен қасддан урганим йўқ. Ўзимни ушлолмай қолдим. Уриб бўлганимдан кейин ўзимга келдим, олдинига бу одам ҳозир мени дабдала қилади, деб қўрқдим. Аммо бўлар иш бўлган эди.</p>
+
+        <p>Комиссар калтак еган йўғон одамга бир қараб, тишларини ғижирлатиб қўйди. Кейин ўрнидан қўзғалмоқчи бўлди-ю, лекин ўнг қўлининг кафтини ишқалаб қўя қолди. Сўнгра йўғон одам турган томонга ўгирилиб:</p>
+        <div class="dialog">— Қани, даъводан кеча қолинг! — деб буюрди.</div>
+        <div class="dialog">— Йўқ, асло кечмайман! — жавоб берди тарсаки еган одам.</div>
+
+        <p>Комиссар тутақиб кетди, кейин ёзув машинкасининг олдида ўтирган полициячига ўгирилди:</p>
+        <div class="dialog">— Қани, ёз бўлмаса. Даъвогар мамлакатимиз жаҳаннамга кетяпти, дебди. Бу билан у юртимизнинг олий манфаатларига ҳамда ҳукуматимизнинг маънавий обрўсига…</div>
+        <div class="dialog">— Хўш, даъводан кечасизми? — сўради у яна йўғон одамдан.</div>
+
+        <p>Тарсаки еган одам беш панжанинг изи тушиб қолган чап бетини силаб туриб деди:</p>
+        <div class="dialog">— Хўп бўлади, афандим, даъводан кечдим.</div>
+
+        <div class="footer">
+            Mutolaa tugadi.
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutolaa</title>
+    <style>
+        :root {
+            --bg-body: #f4f4f4;      /* Och kulrang fon */
+            --paper-white: #ffffff;  /* Oq sahifa */
+            --text-main: #2c3e50;    /* To'q kulrang matn */
+            --text-muted: #7f8c8d;   /* Muted matn */
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Georgia', serif; /* Adabiy asarlar uchun mos shrift */
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigatsiya paneli */
+        .top-nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            color: #000;
+        }
+
+        /* Asosiy konteyner */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: var(--paper-white);
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 2px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #000;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Hikoya matni */
+        .story-content {
+            text-align: justify;
+            font-size: 1.15rem;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        /* Dialoglar uchun maxsus belgi */
+        .dialogue {
+            color: #000;
+            font-weight: 500;
+            display: block;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: sans-serif;
+        }
+
+        /* Mobil qurilmalar uchun */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px 10px;
+            }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <a href="../hikoya.html" class="btn-back">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            ORQAGA QAYTISH
+        </a>
+    </div>
+
+    <article class="container">
+        <header>
+            <h1>Imtihon Kuni</h1>
+        </header>
+
+        <div class="story-content">
+            <p>Dikining yuzida sarosima va qo‘rquv aks etdi. Onasiga qaradi, ammo u o‘z chehrasida tabassumga o‘xshash bir nima namoyon etishga ulgurdi. 
+                <span class="dialogue">– Hammasi yaxshi bo‘ladi, – deya o‘g‘lini ishontirishga urindi u.</span>
+                <span class="dialogue">– Albatta! – gapni ilib ketdi otasi. – Sen ajoyib bolasan, Diki, sinovdan o‘tasan. Keyin esa biz uyga qaytamiz va bu voqeani nishonlaymiz. Yaxshimi?</span>
+                <span class="dialogue">– Ha, – qo‘shildi Diki.</span>
+            </p>
+
+            <p>Ular Hukumat Maorif Xizmati binosiga belgilangan soatdan o‘n besh daqiqa oldin kirib borishdi. Marmar plitalar ustidan yurib, ustunli ulkan vestibyulni kesib o‘tishdi, ark ostidan o‘tib, lift bilan to‘rtinchi qavatga ko‘tarilishdi.</p>
+
+            <p>U yerda, to‘rt yuz to‘rtinchi xonaning ro‘parasida, chiroyli stol ortida belgisiz mundir kiygan bir yigit o‘tirardi. Uning qo‘lida shu soatga belgilanganlar ro‘yxati tushirilgan yondaftar bor edi; yigit Jordanlarni «J» harfidan qarab tekshirib qo‘ydi va keyin kirishga ruxsat berdi.</p>
+
+            <p>To‘rt yuz to‘rtinchi xona sud binosini eslatardi: u mahzun, sovuq va rasmiyatchilikka monand bo‘lib, unda qator metall stollar va uzun skameykalar o‘rnatilgandi. U yerda allaqachon kelib ulgurgan otalar o‘z o‘g‘illari bilan navbat kutib o‘tirishardi; lablari nozik bir qorasoch ayol esa anketalar tarqatayotgandi.</p>
+
+            <p>Mister Jordan anketani to‘ldirib, uni ayolga qaytarib berdi. Keyin Dikiga yuzlanib, dedi: 
+                <span class="dialogue">– Endi ko‘p kutmaymiz. Sening ismingni aytib chaqirishganida, to‘ppa-to‘g‘ri xonaning oxiridagi anovi eshikdan kiraverasan.</span>
+            </p>
+
+            <p>U ayni o‘sha eshik joylashgan tomonni barmog‘i bilan ko‘rsatdi. Qaerdadir yashirin joylashgan ovoz kuchaytirgich jonlandi – birinchi familiya o‘qildi. Bolalardan biri istamaygina otasidan ajralib, xona oxiridagi eshik tomon sekin yo‘nalganini Diki ko‘rdi.</p>
+
+            <p>Beshta kam o‘n birda Jordan familiyasi o‘qildi. 
+                <span class="dialogue">– Omad senga, o‘g‘lim, – dedi otasi Dikiga qaramasdan. – Tekshiruv tugagach, men seni olib ketishga kelaman.</span>
+            </p>
+
+            <p>Diki eshikka borib, uning dumaloq tutqichini buradi. U kirgan xona nimqorong‘i bo‘lib, bola o‘z salomiga alik olgan kulrang mundirli amaldorni zo‘rg‘a ko‘rdi. 
+                <span class="dialogue">– O‘tir, – dedi amaldor xushmuomalalik bilan. U o‘zining stoli yonida joylashgan baland stulga ishora qildi. – Sening isming Richard Jordan, shundaymi?</span>
+                <span class="dialogue">– Ha, ser.</span>
+                <span class="dialogue">– Sening tasnif raqaming 600-115. Mana buni ich, Richard.</span>
+            </p>
+
+            <p>U stoldan plastmassa stakan olib, bolaga uzatdi. Stakandagi suyuqlik yog‘sizlantirilgan sutga o‘xshar va ta’mi otasi aytgan yalpizli kulchaga salgina o‘xshardi, xolos. Diki uni oxirigacha ichib, amaldorga bo‘sh stakanni qaytarib berdi.</p>
+
+            <p>Bolani yengib bo‘lmas uyqu bosa boshladi; bu paytda amaldor bir varaq qog‘ozga allanimalarni yozardi. Keyin u soatiga qarab qo‘yib, o‘rnidan turdi; uning yuzi Dikining yuzi bilan bir xil balandlikda bo‘lib qoldi. Amaldor ko‘krak cho‘ntagidan avtoruchkaga o‘xshash qandaydir moslama chiqarib, bolaning ko‘ziga yorug‘lik tushirdi. 
+                <span class="dialogue">– Juda yaxshi, – dedi u. – Men bilan yur-chi, Richard.</span>
+            </p>
+
+            <p>U Dikini xonaning burchagiga boshlab bordi, u yerdagi hisoblash mashinasi oldida bittagina tirsakli yog‘och kreslo turardi. Chap tomondagi tirsak qo‘yish joyiga mikrofon mahkamlangandi; bola kresloga o‘tirganida, mikrofon aynan uning og‘ziga to‘g‘ri kelib qoldi. 
+                <span class="dialogue">– Endi xotirjam bo‘lib ol, Richard. Senga turli savollar beriladi, sen esa ularni yaxshilab o‘ylab ol. Keyin mikrofonga qarab javob ber. Boshqa hammasini mashinaning o‘zi bajaradi.</span>
+                <span class="dialogue">– Yaxshi, ser.</span>
+                <span class="dialogue">– Endi esa seni yolg‘iz qoldiraman. Qachonki boshlash mumkinligini his qilsang, mikrofonga: «Tayyorman» deya bir so‘z aytsang bas.</span>
+                <span class="dialogue">– Xo‘p, ser.</span>
+            </p>
+
+            <p>Amaldor uning yelkasiga qoqib qo‘yib, chiqib ketdi. Diki: 
+                <span class="dialogue">– Tayyorman, – dedi.</span>
+            </p>
+
+            <p>Mashinaning chirog‘i yondi, mexanizmning g‘ijillashi eshitildi. Keyin ovoz keldi: 
+                <span class="dialogue">– Berilgan raqamlar qatorini to‘ldir: bir, to‘rt, yetti, o‘n.</span>
+            </p>
+
+            <p>…Er-xotin Jordanlar uylaridagi mehmonlarni kutish xonasida bir so‘z demasdan o‘tirishardi: ular qandaydir taxmin bildirishdan hayiqishardi. Tushdan keyingi to‘rtga yaqin telefon jiringlab qoldi. Ayol go‘shakka qarab harakat qildi, biroq eri chaqqonlik qilib qoldi. 
+                <span class="dialogue">– Mister Jordan?</span>
+            </p>
+        </div>
+    </article>
+
+    <footer>
+        Henri Slesar - "Imtihon kuni"
+    </footer>
+
+</body>
+</html>

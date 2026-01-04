@@ -1,11 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essay</title>
+    <title>Esselar</title>
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --paper-white: #ffffff;
+            --text-black: #1a1a1a;
+            --text-gray: #4a4a4a;
+            --highlight-yellow: #ffff00;
+            --highlight-green: #00ff00;
+            --border-gray: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: "Times New Roman", serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: var(--text-black);
+        }
+
+        .document {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--paper-white);
+            padding: 50px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-gray);
+        }
+
+        .title-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .yellow-bg { background-color: var(--highlight-yellow); padding: 2px 10px; font-weight: bold; text-transform: uppercase; }
+        .green-bg { background-color: var(--highlight-green); padding: 2px 10px; font-weight: bold; text-transform: uppercase; }
+
+        h2 { font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px; }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .icon {
+            margin-right: 15px;
+            color: #555;
+            font-style: normal;
+        }
+
+        .section-divider {
+            border-bottom: 1px solid var(--border-gray);
+            margin: 20px 0;
+        }
+
+        .bold-text { font-weight: bold; }
+        .underline { text-decoration: underline; }
+        
+        .main-content {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .argument-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 3px solid #333;
+            margin: 20px 0;
+        }
+
+        /* Orqaga tugmasi */
+        .back-nav {
+            margin-bottom: 20px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .back-nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci dignissimos sint molestiae temporibus expedita nobis ducimus perferendis quasi accusantium veniam?</p>
+
+    <div class="back-nav">
+        <a href="./index.html">← ORQAGA QAYTISH</a>
+    </div>
+
+    <div class="document">
+        
+        <div class="title-box">
+            <span class="yellow-bg">ESSE QOLIPI</span>
+        </div>
+
+        <h2 class="underline"><span class="green-bg">KIRISH:</span></h2>
+
+        <div class="list-item">
+            <span class="icon">✥</span>
+            <span>Milliy rivojlanishning yangi davriga bosqichma-bosqich qadam qo'yayotgan O'zbekistonimizda so'nggi yillarda ____________________ga alohida e'tibor qaratilmoqda.</span>
+        </div>
+
+        <div class="list-item">
+            <span class="icon">✥</span>
+            <span>Zamonaviy texnologiyalarning shiddatkorona odimlashi ______________ga yo'l ochib berdi.</span>
+        </div>
+
+        <div class="list-item">
+            <span class="icon">✥</span>
+            <span>Keng islohotlar maydoniga aylanib borayotgan yangi O'zbekistonda _____________________ masalalari davlat siyosati darajasiga ko'tarilganligi hech kimgа sir emas.</span>
+        </div>
+
+        <div class="list-item">
+            <span class="icon">✥</span>
+            <span>Texnika va texnologiya, sanoat yuqori darajada rivojlangan XXI asrda ___________________ dolzarb muammoga aylanib bormoqda.</span>
+        </div>
+
+        <div class="list-item">
+            <span class="icon">✥</span>
+            <span>Insoniyat yaralibdiki, turli tanlovlar qurshovida hayot kechiradi. Kishilarning yashash muhiti, o'z oldiga qo'ygan maqsadlari va dunyoqarashi borasida uzviy ziddiyatlar bor ekan, jamiyatdagi u yoki bu masala yuzasidan bahs-munozaralar yuzaga kelishi tabiiy. Ana shunday muhokamali mavzulardan biri — ......</span>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="underline"><span class="green-bg">ASOSIY QISM:</span></h2>
+        <p class="bold-text underline">3+1</p>
+        <p class="main-content">
+            <span class="bold-text">Darhaqiqat</span>, internet taqdim etgan ajoyib tuhfalardan biri - elektron kutubxonalar tobora jahon bilim omborining asosiga aylanib bormoqda. <span class="bold-text">Birinchidan</span>, bu tizim kitobxonlar uchun juda qulay bo'lib, qidiruv tizimlarining mavjudligi va undan 24 soat mobaynida foydalanish mumkinligi odatdagi kutubxonalarga nisbatan ustunlikni ta'minlaydi. <span class="bold-text">Ikkinchidan</span>, virtual kitoblar olamining ma'lumotlar bazasi cheklanmagan bo'lib, topilishi qiyin bo'lgan nodir asarlarning elektron nusxasini ko'chirib olish mumkin. <span class="bold-text">Uchinchidan</span>, onlayn kutubxonalar ko'p hollarda bepul bo'lib, moddiy tomondan qiyinchilik tug'dirmaydi...
+        </p>
+
+        <p class="bold-text underline">4+2</p>
+        <p class="main-content">
+            <span class="bold-text">Darhaqiqat</span>, raqamlashgan dunyo bizga taqdim etgan eng katta yutuqlardan biri onlayn ta'limdir. <span class="bold-text">Avvalo</span>, uning makon va zamon tanlamasligi juda qulay bo'lib... <span class="bold-text">Ikkinchidan</span>, an'anaviy ta'limga qaraganda unga kamroq mablag' sarflanadi, <span class="bold-text">ya'ni</span> bunda yo'l haqi, tushlik puli kabi kundalik xarajatlarga ehtiyoj tug'ilmaydi.
+        </p>
+
+        <div class="section-divider"></div>
+
+        <div class="title-box">
+            <span class="yellow-bg">ARGUMENTLAR O'ZARO CHAMBARCHAS BOG'LANGAN:</span>
+        </div>
+        <p class="main-content">
+            <span class="bold-text">Bilamizki</span>, bola tarbiyasida u unib-o'sgan atrof muhit, oilasida o'rnatilgan ma'lum tartib-qoidalar va ota-onasining dunyoqarashi muhim o'rin tutadi. <span class="bold-text">«Olmaning tagiga olma tushadi»</span>, — deganlaridek... <span class="bold-text">Shuningdek</span>, yana shunday toifa vakillari borki, ular vaqtida o'zlari erisha olmagan sohani farzandlari egallashini xohlashadi...
+        </p>
+
+        <div class="title-box">
+            <span class="yellow-bg">TOMONLARNING IKKINCHISIGA O'TISH UCHUN:</span>
+        </div>
+        <div class="list-item"><span class="icon">✥</span> Har yaxshining bir yomoni bo'lganidek...</div>
+        <div class="list-item"><span class="icon">✥</span> Shunga qaramay, ________________ ning ahamiyatini to'la inkor etib bo'lmaydi.</div>
+        <div class="list-item"><span class="icon">✥</span> "Oyni etak bilan yopib bo'lmaydi", - deganlaridek, ___________ ning ham bir qancha afzalliklarini inkor eta olmaymiz.</div>
+
+        <div class="title-box">
+            <span class="yellow-bg">SHAXSIY FIKR UCHUN:</span>
+        </div>
+        <div class="list-item"><span class="icon">✥</span> O'ylashimcha, har ikki ________________ ning ham o'z ixlosmandlari va o'z haqiqatlari bor...</div>
+        <div class="list-item"><span class="icon">✥</span> Menimcha, bir qancha salbiy jihatlariga qaramay, ________________ allaqachon hayotimizning ajralmas bo'lagiga aylanib ulgurdi.</div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="underline"><span class="green-bg">XULOSA:</span></h2>
+        <div class="list-item">
+            <span class="icon">✥</span> <span class="bold-text">Fikrimni xulosalar ekanman</span>, qay yo'l bilan bo'lmasin, hech qachon o'qish va izlanishdan to'xtamasligimiz lozimligini ta'kidlamoqchiman. Zero, donolar aytganlaridek: <span class="bold-text">"Kitob — har qanday bilimning joni va yuragi istalgan sohaning ibtidosidir"</span>.
+        </div>
+
+        <div class="list-item">
+            <span class="icon">✥</span> <span class="bold-text">Xulosa qilib aytganda</span>, "Har kim o'z rizqi bilan", - deganlaridek, oliy ta'limni tanlaymizmi yoki o'rta maktabni tamomlagach darhol ishlashnimi, avvalo, halollik, aniq maqsad va u tomon tinimsiz harakat hamrohimiz bo'lsa, bir kun kelib jamiyatda baralla o'z fikrini aytadigan shaxs bo'la olamiz.
+        </div>
+
+        <p class="main-content" style="font-size: 0.9rem; border-top: 1px solid #eee;">
+            <span class="bold-text">So'zimning intihosi sifatida quyidagi hadisni ilova qilmoqchiman:</span> "Agar bir muslim banda bir ko'chat yoki ekin eksayu, bundan inson, qush yoki hayvon taomlansa, unga eng katta savob yoziladi". Shunday ekan, ona tabiatimizning gullab yashnashi uchun mas'ulmiz.
+        </p>
+
+    </div>
+    <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">© Sarafroz Platformasi uchun maxsus tayyorlandi</p>
+</div>
 </body>
 </html>
