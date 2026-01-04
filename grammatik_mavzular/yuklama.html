@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yordamchi so'zlar - Grammatika</title>
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --paper-white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-gray: #555555;
+            --line-color: #e0e0e0;
+            --accent-gray: #f9f9f9;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Orqaga tugmasi wrapper */
+        .nav-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line-color);
+            padding: 10px 20px;
+        }
+
+        .btn-orqaga {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-orqaga:hover { color: #888; }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            background: var(--paper-white);
+            padding: 60px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        h1 { font-size: 2.2rem; text-align: center; border-bottom: 3px solid #333; padding-bottom: 10px; margin-bottom: 40px; text-transform: uppercase; }
+        h2 { font-size: 1.6rem; border-bottom: 1px solid var(--line-color); padding-bottom: 5px; margin-top: 40px; text-transform: uppercase; }
+        h3 { font-size: 1.2rem; color: #444; margin-top: 30px; }
+        h4 { font-size: 1.1rem; color: #666; margin-top: 20px; border-left: 4px solid #ccc; padding-left: 10px; }
+
+        p { margin: 15px 0; text-align: justify; }
+        
+        .definition { font-style: italic; color: var(--text-gray); border-bottom: 1px dashed var(--line-color); padding-bottom: 10px; }
+
+        ul, ol { margin-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        .example {
+            background-color: var(--accent-gray);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-style: italic;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .example::before { content: "📌 Misol: "; font-weight: bold; font-style: normal; }
+
+        hr { border: 0; border-top: 1px solid var(--line-color); margin: 30px 0; }
+
+        .table-box { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .table-box td, .table-box th { border: 1px solid var(--line-color); padding: 10px; text-align: left; }
+        .table-box th { background: #f2f2f2; }
+
+    </style>
+</head>
+<body>
+
+    <div class="nav-header">
+        <a href="../grammatika.html" class="btn-orqaga">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Orqaga qaytish
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>YORDAMCHI SO'ZLAR</h1>
+        <p class="definition">Atash ma'nosiga ega bo'lmagan, gap bo'lagi vazifasida kelmaydigan so'zlar yordamchi so'zlar deyiladi. Ular mustaqil so'zlarni yoki gaplarni bir-biriga bog'lash vazifasini bajaradi.</p>
+        
+        <p><strong>Yordamchi so'zlar 3 turga bo'linadi:</strong></p>
+        <ol>
+            <li>Bog'lovchi</li>
+            <li>Ko'makchi</li>
+            <li>Yuklama</li>
+        </ol>
+
+        <hr>
+
+        <h2>1. BOG'LOVCHI</h2>
+        <p>Bog'lovchi so'zlar uyushiq bo'laklarni yoki qo'shma gap tarkibidagi sodda gaplarni o'zaro bog'lash uchun xizmat qiladi.</p>
+
+        <h3>1.1. TENG BOG'LOVCHILAR</h3>
+        <p>Teng huquqli bo'laklar yoki gaplarni bog'laydi.</p>
+        
+        <h4>1) Biriktiruvchi bog'lovchilar</h4>
+        <p>— qo'shish, ketma-ketlik ma'nosi (va, ham, bilan, -u, -yu, -da)</p>
+        <div class="example">Men kitob va daftar oldim.</div>
+
+        <h4>2) Ayiruvchi bog'lovchilar</h4>
+        <p>— birini boshqasidan ayirib ko'rsatadi (yoki, yo, yoxud, goh... goh..., dam... dam...)</p>
+        <div class="example">Bugun sen yoki u boradi.</div>
+
+        <h4>3) Zidlovchi bog'lovchilar</h4>
+        <p>— qarama-qarshilik (ammo, lekin, biroq)</p>
+        <div class="example">U harakat qildi, lekin kech qoldi.</div>
+
+        <h3>1.2. ERGASHTIRUVCHI BOG'LOVCHILAR</h3>
+        <p>Ergash gapni bosh gapga bo'ysundiradi (chunki, negaki, toki, agar, basharti, go'yo).</p>
+
+        <hr>
+
+        <h2>2. KO'MAKCHI</h2>
+        <p>So'zlarni o'zaro grammatik va mazmuniy munosabatini ifodalash uchun ishlatiladi. (uchun, kabi, bilan, sayin, qadar, orqali).</p>
+        <div class="example">Kitob uchun, do'st bilan.</div>
+        
+        <h3>2.1. KO'MAKCHINING GRAMMATIK MA'NOLARI</h3>
+        <ul>
+            <li>Sabab: uchun, sababli, tufayli</li>
+            <li>Yo'nalish: tomon, qarab, sari</li>
+            <li>O'xshatish: kabi, singari</li>
+            <li>Chegara: qadar, gacha</li>
+        </ul>
+
+        <hr>
+
+        <h2>3. YUKLAMA</h2>
+        <p>Gapga yoki so'zga ta'kid, so'roq, gumon, cheklash, kuchaytirish kabi ma'nolarni qo'shadi.</p>
+        
+        <h3>3.1. MA'NO TURLARI (6 TA)</h3>
+        <ul>
+            <li><strong>So'roq yuklamasi:</strong> -mi, -chi, -a, -ya (Kelding-mi?)</li>
+            <li><strong>Ta'kid yuklamasi:</strong> -ku, -da, ham (Men aytdim-ku.)</li>
+            <li><strong>Ayiruv-chegaralov:</strong> faqat, xolos, faqatgina (U faqat sen bilan gaplashadi.)</li>
+            <li><strong>Gumon yuklamasi:</strong> -dir, -ov, -yov (U kelarmikan?)</li>
+        </ul>
+
+        <hr>
+
+        <h2>4. ORALIQDAGI SO'ZLAR</h2>
+        <p>Gapda ishtirok etsa-da, gap bo'laklari bilan grammatik bog'lanmaydigan so'zlar.</p>
+        
+        <h3>1. Modal so'zlar</h3>
+        <p>So'zlovchining fikrga munosabati (albatta, shubhasiz, afsuski, ehtimol).</p>
+
+        <h3>2. Taqlid so'zlar</h3>
+        <p>Tovushga (taraq-turuq) yoki holatga (yarq-yurq) taqlidni bildiradi.</p>
+
+        <h3>3. Undov so'zlar</h3>
+        <p>His-hayajon (voy, oh, bay-bay) yoki buyruq-xitob (be-beh, tss) bildiradi.</p>
+
+  
+    </div>
+
+
+       <div class="line"></div>
+    <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">© Sarafroz Platformasi uchun maxsus tayyorlandi</p>
+</div>
+
+</body>
+</html>

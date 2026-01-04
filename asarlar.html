@@ -1,132 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adabiyotlar</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Sarafroz - Asarlar</title>
     <style>
-           .asarlar-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        background-color: #f4f4f4;
-    }
+        :root {
+            --bg-body: #f8f9fa;      /* Och kulrang fon */
+            --white: #ffffff;        /* Oq rang */
+            --text-dark: #2d3436;    /* To'q kulrang matn */
+            --text-gray: #636e72;    /* O'rta kulrang matn */
+            --border: #dfe6e9;       /* Chiziqlar rangi */
+            --accent: #b2bec3;       /* Hover effekti uchun */
+        }
 
-    .asar-card {
-        background-color: #383e42; /* Antratsit rangi */
-        color: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        border-left: 5px solid #b48395; /* Dusty rose chizig'i */
-        cursor: pointer;
-    }
+        body {
+            background-color: var(--bg-body);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: var(--text-dark);
+        }
 
-    .asar-card:hover {
-        box-shadow: 5px 4px 5px 4px #dcaeae;
-        transition-duration: 0.5s;
-        transform: translateY(-10px);
-    }
+        /* Yuqori qism (Navigatsiya) */
+        .top-bar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .asar-card h3 {
-        margin: 0 0 10px 0;
-        font-size: 1.2rem;
-        color: #dcaeae; /* Ochroq pushti */
-    }
+        .btn-orqaga {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
 
-    .asar-card p {
-        margin: 0;
-        font-size: 0.9rem;
-        opacity: 0.8;
-    }
+        .btn-orqaga:hover {
+            color: var(--text-dark);
+        }
 
-    .status-badge {
-        display: inline-block;
-        margin-top: 15px;
-        font-size: 0.7rem;
-        background: #b48395;
-        padding: 3px 10px;
-        border-radius: 10px;
-    }
+        .page-title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
+        /* Asarlar Gridi */
+        .asarlar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    a {
-    text-decoration: none;
-    transition: 0.3s;
-    color: #f4f4f4;
-}
+        /* Asar kartochkasi */
+        .asar-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
 
-a:hover {
-    text-decoration: none; 
-    color: darkred; 
-}
+        .asar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
 
-.orqaga {
-    color:aqua;
-}
+        .asar-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+        }
+
+        .asar-card p {
+            margin: 0 0 20px 0;
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
+        /* O'qish tugmasi */
+        .status-badge {
+            margin-top: auto;
+        }
+
+        .status-badge a {
+            display: inline-block;
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .status-badge a:hover {
+            background-color: var(--text-gray);
+            transform: scale(1.05);
+        }
+
+        /* Mobil qurilmalar uchun */
+        @media (max-width: 600px) {
+            .asarlar-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-title { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
-     <!-- <nav class="navbar">
-        <div class="logo">Sarafroz</div>
-        <ul class="nav-links">
-            <li><a href="./index.html">Bosh sahifa</a></li>
-            <li><a href="./courses/courses.html">Kurslar</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Bilim yo'li ▾</a>
-                <ul class="dropdown-content">
-                    <li><a href="./grammatika.html">Grammatika</a></li>
-                    <li><a href="#">Essay</a></li>
-                    <li><a href="./asarlar.html">Asarlar</a></li>
-                    <li><a href="#">G'azallar</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Namunaviy testlar</a></li>
-            <li><a href="about.html">Biz haqimizda</a></li>
-        </ul>
-        <a class="btn-outline" href="./login/login.html">Kirish</a>
-    </nav> -->
 
-    <div>
-        <div class="orqaga">
-        <h3>
-            <a href="./index.html" style="color: rgb(255, 255, 255); position: absolute; top: 10px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 20px;">Orqaga</a>
-        </h3>
-        </div>
-        <h1 style="background-color: #383e42e6; color: azure; text-align:right; padding-right: 200px;">Asarlar</h1>
+    <div class="top-bar">
+        <a href="./index.html" class="btn-orqaga">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Orqaga
+        </a>
+        <h1 class="page-title">Asarlar</h1>
+        <div style="width: 80px;"></div> <!-- Balans uchun bo'sh joy -->
     </div>
-<!---------------------- Asarlar -------------------- -->
+
     <div class="asarlar-grid">
-    <!-- Birinchi asar -->
-    <div class="asar-card">
-        <h3>Zarbulmasal</h3>
-        <p>Gulxaniy</p>
-        <div class="status-badge">
-            <a href="https://inlibrary.uz/index.php/science-research/article/view/102582">O'qishni boshlash</a>
-        </div>
-    </div>
-
-    <!-- Ikkinchi asar -->
-    <div class="asar-card">
-        <h3>O`tkan kunlar</h3>
-        <p>Abdulla Qodiriy</p>
-        <div class="status-badge">
-            <a href="https://arm.navoiy-uni.uz/wp-content/uploads/2019/04/utgan_kunlar_ziyouz_com.pdf" style="text-decoration: none;">O'qishni boshlash</a>
-        </div>
-    </div>
-    
+        <!-- 1-asar -->
         <div class="asar-card">
-        <h3>Mehrobdan chayon</h3>
-        <p>Abdulla Qodiriy</p>
-        <div class="status-badge">
-            <a href="https://zakm.uz/media/books/Abdulla_Qodiriy._Mehrobdan_chayon.pdf" style="text-decoration: none;">O'qishni boshlash</a>
+            <h3>Zarbulmasal</h3>
+            <p>Gulxaniy</p>
+            <div class="status-badge">
+                <a href="https://inlibrary.uz/index.php/science-research/article/view/102582" target="_blank">O'qishni boshlash</a>
+            </div>
         </div>
-    </div>
 
+        <!-- 2-asar -->
         <div class="asar-card">
+            <h3>O'tkan kunlar</h3>
+            <p>Abdulla Qodiriy</p>
+            <div class="status-badge">
+                <a href="https://arm.navoiy-uni.uz/wp-content/uploads/2019/04/utgan_kunlar_ziyouz_com.pdf" target="_blank">O'qishni boshlash</a>
+            </div>
+        </div>
+
+        <!-- 3-asar -->
+        <div class="asar-card">
+            <h3>Mehrobdan chayon</h3>
+            <p>Abdulla Qodiriy</p>
+            <div class="status-badge">
+                <a href="https://zakm.uz/media/books/Abdulla_Qodiriy._Mehrobdan_chayon.pdf" target="_blank">O'qishni boshlash</a>
+            </div>
+        </div>
+
+                <div class="asar-card">
         <h3>Kecha va kunduz</h3>
         <p>Abdulhamid Cho'lpon</p>
         <div class="status-badge">
@@ -437,10 +481,7 @@ a:hover {
 
 
 
+    </div>
 
-
-
-
-</div>
 </body>
 </html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ona Tili - Morfologiya</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --light-gray: #f2f2f2;
+            --border-gray: #dddddd;
+            --text-main: #333333;
+            --text-muted: #555555;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-main);
+            font-family: "Times New Roman", Times, serif; /* Kitobiy uslub uchun */
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .document-page {
+            background-color: var(--white);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-gray);
+        }
+
+        h1, h2, h3, h4 {
+            color: #000;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+
+        .title-center { text-align: center; border-bottom: 2px solid #000; padding-bottom: 5px; }
+        
+        p { margin: 10px 0; text-align: justify; }
+        
+        ul, ol { margin: 10px 0; padding-left: 25px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th { background-color: var(--light-gray); }
+
+        .line { border-bottom: 1px solid var(--border-gray); margin: 20px 0; }
+
+        .note { font-weight: bold; text-decoration: underline; }
+        
+        .section-box { border: 1px solid var(--border-gray); padding: 15px; margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+
+<style>
+    .top-nav {
+        width: 1180px;
+        background-color: rgba(255, 255, 255, 0.9); /* Shaffofroq oq */
+        backdrop-filter: blur(10px); /* Orqa fonni xiralashtirish (zamonaviy effekt) */
+        border-bottom: 1px solid #eeeeee;
+        padding: 12px 5%;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+    }
+
+    .link-orqaga {
+        color: #666666;
+        text-decoration: none;
+        font-family: 'Segoe UI', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .link-orqaga:hover {
+        color: #000000;
+    }
+</style>
+
+<div class="top-nav">
+    <a href="../grammatika.html" class="link-orqaga">
+        ← Orqaga qaytish
+    </a>
+</div>
+
+
+<div class="document-page">
+    <h1 class="title-center">MORFOLOGIYA</h1>
+    <p>Morfologiya — so‘zlarning grammatik shakllari, so‘z turkumlari va grammatik kategoriyalarini o‘rganuvchi tilshunoslik bo‘limidir. Morfologiya so‘zning ichki tuzilishi va grammatik imkoniyatlarini tekshiradi.</p>
+
+    <div class="line"></div>
+
+    <h2>SO‘Z TURKUMLARI</h2>
+    <p>So‘zlar atash ma’nosiga ega bo‘lishi yoki bo‘lmasligiga ko‘ra turkumlarga ajratiladi.</p>
+    <p><strong>Mustaqil so‘z turkumlari</strong></p>
+    <p>Atash (nomlash) ma’nosiga ega bo‘lib, gapda mustaqil bo‘lak bo‘la oladi:</p>
+    <ul>
+
+        <li>ot</li>
+        <li>sifat</li>
+        <li>son</li>
+        <li>fe’l</li>
+        <li>ravish</li>
+        <li>olmosh</li>
+    </ul>
+
+    <div class="line"></div>
+
+    <h1>OT</h1>
+    <h3>1. Otning ta’rifi</h3>
+    <p>Ot — shaxs, narsa, hodisa, tushuncha va joy nomini bildiradigan mustaqil so‘z turkumidir. Kim? Nima? Qayer? savollaridan biriga javob beradi.</p>
+    <p><strong>Misollar:</strong> o‘quvchi, daraxt, quvonch, bilim, shamol.</p>
+    
+    <p><strong>Ot turkumiga xos asosiy belgilar:</strong></p>
+    <ol>
+        <li>Gapning har qanday bo‘lagi vazifasida qo‘llaniladi.</li>
+        <li>Son, egalik, kelishik kabi grammatik kategoriyalarga ega.</li>
+        <li>O‘ziga xos yasash tizimiga ega.</li>
+        <li>Mustaqil so‘zlarning barchasi bilan bog‘lanib, birikma hosil qiladi.</li>
+        <li>Predmetlik ma’nosini ifodalaydi.</li>
+    </ol>
+
+    <div class="line"></div>
+
+    <h3>2. Otning grammatik kategoriyalari</h3>
+    <p>Ot quyidagi uchta grammatik kategoriyaga ega:</p>
+    <ol>
+        <li>Son kategoriyasi</li>
+        <li>Egalik kategoriyasi</li>
+        <li>Kelishik kategoriyasi</li>
+    </ol>
+
+    <h4>2.1. Son kategoriyasi</h4>
+    <p>Son kategoriyasi predmetning miqdor jihatini bildiradi.</p>
+    <p><strong>Birlik son:</strong> Predmetning yakka holda ekanini bildiradi. Qo‘shimchasi bo‘lmaydi. Misol: kitob, o‘qituvchi.</p>
+    <p><strong>Ko‘plik son:</strong> Predmetning ikki va undan ortiq ekanini bildiradi. <strong>-lar</strong> qo‘shimchasi orqali hosil qilinadi.</p>
+
+    <div class="line"></div>
+
+    <h4>2.2. Egalik kategoriyasi</h4>
+    <p>Egalik kategoriyasi predmetning kimga yoki nimaga tegishli ekanini bildiradi.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Shaxs</th>
+                <th>Birlik</th>
+                <th>Ko‘plik</th>
+                <th>Ma’nosi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1-shaxs</td>
+                <td>-(i)m</td>
+                <td>-(i)miz</td>
+                <td>So‘zlovchiga tegishli</td>
+            </tr>
+            <tr>
+                <td>2-shaxs</td>
+                <td>-(i)ng</td>
+                <td>-(i)ngiz</td>
+                <td>Tinglovchiga tegishli</td>
+            </tr>
+            <tr>
+                <td>3-shaxs</td>
+                <td>-(s)i</td>
+                <td>-(lar)i</td>
+                <td>O‘zgalarga tegishli</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="line"></div>
+
+    <h4>2.3. Kelishik kategoriyasi</h4>
+    <p>Kelishiklar otning gapdagi sintaktik munosabatini bildiradi.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Kelishik nomi</th>
+                <th>Qo‘shimchasi</th>
+                <th>Savoli</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bosh kelishik</td>
+                <td>—</td>
+                <td>kim? nima? qayer?</td>
+            </tr>
+            <tr>
+                <td>Qaratqich k.</td>
+                <td>-ning</td>
+                <td>kimning? nimaning?</td>
+            </tr>
+            <tr>
+                <td>Tushum k.</td>
+                <td>-ni</td>
+                <td>kimni? nimani?</td>
+            </tr>
+            <tr>
+                <td>Jo‘nalish k.</td>
+                <td>-ga, -ka, -qa</td>
+                <td>kimga? nimaga? qayerga?</td>
+            </tr>
+            <tr>
+                <td>O‘rin-payt k.</td>
+                <td>-da</td>
+                <td>kimda? nimada? qayerda?</td>
+            </tr>
+            <tr>
+                <td>Chiqish k.</td>
+                <td>-dan</td>
+
+<td>kimdan? nimadan? qayerdan?</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="line"></div>
+
+    <h1>SIFAT</h1>
+    <h3>1. Sifat ta’rifi</h3>
+    <p>Sifat — predmetning belgisi, xususiyatini bildiradigan so‘z turkumidir. Qanday? Qanaqa? savollariga javob beradi.</p>
+    <p><strong>Sifatning ma’no turlari:</strong></p>
+    <ul>
+        <li>Rang-tus: oq, qizil</li>
+        <li>Hajm-shakl: katta, yumaloq</li>
+        <li>Hali-holat: bo'sh, quruq</li>
+        <li>Maza-ta'm: shirin, nordon</li>
+        <li>Xarakter-xususiyat: mehribon, dangasa</li>
+    </ul>
+
+    <h3>4. Sifatning daraja kategoriyasi</h3>
+    <ol>
+        <li><strong>Oddiy daraja:</strong> yaxshi (qo‘shimchasiz)</li>
+        <li><strong>Qiyosiy daraja:</strong> yaxshiroq (-roq)</li>
+        <li><strong>Orttirma daraja:</strong> eng yaxshi, juda yaxshi, ko‘p yaxshi.</li>
+        <li><strong>Ozaytirma daraja:</strong> yaxshigina, sarg‘ish, och ko‘k.</li>
+    </ol>
+
+    <div class="line"></div>
+    <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">© Sarafroz Platformasi uchun maxsus tayyorlandi</p>
+</div>
+
+</body>
+</html>

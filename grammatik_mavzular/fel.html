@@ -125,11 +125,50 @@ em {
 </head>
 <body>
 
-        <div class="orqaga">
+        <!-- <div class="orqaga">
         <h3>
             <a href="../grammatika.html" style="color: white; position: absolute; top: 0px; left: 0px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#3333338e; width: 100%;">Orqaga</a>
         </h3>
-        </div>
+        </div> -->
+
+<style>
+    .top-nav {
+        width: 1180px;
+        background-color: rgba(255, 255, 255, 0.9); /* Shaffofroq oq */
+        backdrop-filter: blur(10px); /* Orqa fonni xiralashtirish (zamonaviy effekt) */
+        border-bottom: 1px solid #eeeeee;
+        padding: 12px 5%;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+    }
+
+    .link-orqaga {
+        color: #666666;
+        text-decoration: none;
+        font-family: 'Segoe UI', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .link-orqaga:hover {
+        color: #000000;
+    }
+</style>
+
+<div class="top-nav">
+    <a href="../grammatika.html" class="link-orqaga">
+        ← Orqaga qaytish
+    </a>
+</div>
+
 
 
 
@@ -344,5 +383,7 @@ em {
             </table>
         </div>
     </div>
+
+        <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">© Sarafroz Platformasi uchun maxsus tayyorlandi</p>
 </body>
 </html>

@@ -5,122 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grammatika</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-   <style>
-           .asarlar-grid {
+<style>
+    :root {
+        --bg-body: #f8f9fa;      /* Juda och kulrang fon */
+        --card-white: #ffffff;   /* Sof oq kartochka */
+        --text-dark: #2d3436;    /* To'q kulrang (asl qoradan yumshoqroq) */
+        --text-gray: #636e72;    /* O'rta kulrang matn uchun */
+        --border-light: #dfe6e9; /* Nozik chegara rangi */
+        --accent-gray: #b2bec3;  /* Hover effekti uchun */
+    }
+
+    body {
+        background-color: var(--bg-body);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text-dark);
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .mavzu-sarlavha {
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
+
+    .mavzu-sarlavha h2 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        letter-spacing: -1px;
+    }
+
+    .asarlar-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        background-color: #f4f4f4;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 20px 5%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .asar-card {
-        background-color: #f0f2f7; /* Antratsit rangi */
-        color: brown;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px cornflowerblue;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        border-left: 5px solid #b48395; /* Dusty rose chizig'i */
+        background-color: var(--card-white);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid var(--border-light);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02); /* Deyarli sezilmas soya */
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .asar-card:hover {
-        box-shadow: 5px 4px 5px 4px grey;
-        transition-duration: 0.5s;
-        transform: translateY(-10px);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Yumshoq keng soya */
+        border-color: var(--accent-gray);
     }
 
     .asar-card h3 {
-        margin: 0 0 10px 0;
-        font-size: 1.2rem;
-        color:cornflowerblue; /* Ochroq pushti */
+        margin: 0 0 12px 0;
+        font-size: 1.4rem;
+        color: var(--text-dark);
+        font-weight: 700;
     }
 
     .asar-card p {
-        margin: 0;
-        font-size: 0.9rem;
-        opacity: 0.8;
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        margin-bottom: 20px;
     }
 
-    .status-badge1 {
+    .status-badge1 a {
         display: inline-block;
-        margin-top: 15px;
-        font-size: 0.7rem;
-        background: di;
-        padding: 3px 10px;
-        border-radius: 10px;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border-bottom: 2px solid var(--border-light);
+        padding-bottom: 2px;
+        transition: all 0.3s ease;
     }
 
+    .status-badge1 a:hover {
+        color: #000;
+        border-bottom-color: var(--text-dark);
+        padding-right: 10px; /* Kichik harakat effekti */
+    }
 
-    a {
-    text-decoration: none;
-    transition: 0.3s;
-    color: #f4f4f4;
-}
+    /* Orqaga tugmasi */
+    .orqaga {
+        padding: 30px 5%;
 
-a:hover {
-    text-decoration: none; 
-    color: darkred; 
-}
 
-.orqaga h3 {
-    color: #383e42;
-    position: absolute;
-    top: 6px;
-    margin-left: 25px;
-}
+    }
 
-.orqaga h3:hover {
-    color: #b48395;
-}
+    .orqaga a {
+        text-decoration: none;
+        color: var(--text-gray);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s;
+    }
 
-    </style>
-</head>
+    .orqaga a:hover {
+        color: var(--text-dark);
+    }
+
+    /* Mobil qurilmalar uchun moslashuv */
+    @media (max-width: 600px) {
+        .asarlar-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
 <body>
 
-        <div class="orqaga">
-        <h3>
-            <a href="./index.html">Orqaga</a>
-        </h3>
-        </div>
-
-<div>
-    <p class="mavzu">Mavzular</p>
-</div>
-<div class="mavzu">
-    <div class="asar-card">
-        <h3>Fe'l</h3>
-        <div class="status-badge1">
-            <a href="./grammatik_mavzular/fel.html">O'rganishni boshlash</a>
-        </div>
+    <div class="orqaga">
+        <a href="./index.html"> 
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Orqaga qaytish
+        </a>
     </div>
 
-
-    <div class="asar-card">
-        <h3>Gap bo'laklari</h3>
-        <div class="status-badge1">
-            <a href="./grammatik_mavzular/gap_bo'laklari.html">O'rganishni boshlash</a>
-        </div>
+    <div class="mavzu-sarlavha">
+        <h2>Grammatik mavzular</h2>
     </div>
 
-
-    <div class="asar-card">
-        <h3>Kesim</h3>
-        <div class="status-badge1">
-            <a href="./grammatik_mavzular/kesim.html">O'rganishni boshlash</a>
+    <div class="asarlar-grid">
+        <!-- Kartochka 1 -->
+        <div class="asar-card">
+            <div>
+                <h3>Fe'l</h3>
+                <p>Harakat va holatni ifodalovchi so'z turkumi.</p>
+            </div>
+            <div class="status-badge1">
+                <a href="./grammatik_mavzular/fel.html">Mavzuga kirish →</a>
+            </div>
         </div>
-    </div>
 
-    
-    <div class="asar-card">
-        <h3>Ergashgan qo'shma gaplar</h3>
-        <div class="status-badge1">
-            <a href="./grammatik_mavzular/ergashgan_gap.html">O'rganishni boshlash</a>
+        <!-- Kartochka 2 -->
+        <div class="asar-card">
+            <div>
+                <h3>Ot, sifat</h3>
+                <p>Ot — predmet yoki shaxs nomini bildiradi. <br>
+Sifat — predmetning belgi-xususiyatini bildiradi.</p>
+            </div>
+            <div class="status-badge1">
+                <a href="./grammatik_mavzular/ot,sifat.html">Mavzuga kirish →</a>
+            </div>
         </div>
+
+        <!-- Kartochka 3 -->
+        <div class="asar-card">
+            <div>
+                <h3>Son,olmosh, ravish</h3>
+                <p>Son — predmetning miqdori yoki tartibini <br>
+Olmosh — ot, sifat yoki son o‘rnida qo‘llanadi.
+<br>
+Ravish — harakatning qanday, qayerda, qachon bajarilishini bildiradi.</p>
+            </div>
+            <div class="status-badge1">
+                <a href="#">Mavzuga kirish →</a>
+            </div>
+        </div>
+
+                <!-- Kartochka 4 -->
+        <div class="asar-card">
+            <div>
+                <h3>Yuklama</h3>
+                <p>Gapga qo‘shimcha ma’no, ta’kid yoki munosabat beradigan yordamchi so‘zdir.</p>
+            </div>
+            <div class="status-badge1">
+                <a href="./grammatik_mavzular/yuklama.html">Mavzuga kirish →</a>
+            </div>
+        </div>
+
+                        <!-- Kartochka 5 -->
+        <div class="asar-card">
+            <div>
+                <h3>Leksikologiya, Orfografiya</h3>
+                <p>Leksikologiya — tilning so'z boyligini o'rganadi. <br>
+Orfografiya — so'zlarning to'g'ri yozilish qoidalarini o'rganadi.</p>
+            </div>
+            <div class="status-badge1">
+                <a href="./grammatik_mavzular/leksikologiya,orfografiya.html">Mavzuga kirish →</a>
+            </div>
+        </div>
+
+                              <!-- Kartochka 6 -->
+        <div class="asar-card">
+            <div>
+                <h3>Sintaksis</h3>
+                <p>Grammatikaning so'z birikmasi va gap, ularning tuzilishi, turlari hamda o'zaro bog'lanishini o'rganadigan bo'limi</p>
+            </div>
+            <div class="status-badge1">
+                <a href="./grammatik_mavzular/sintaksis.html">Mavzuga kirish →</a>
+            </div>
+        </div>
+
+
     </div>
-</div>
-    
 
 </body>
-</html>
+</head>
